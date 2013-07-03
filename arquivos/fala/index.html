@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Teste da API de fala</title>
+<style type="text/css">
+.inline-block{display:inline-block;vertical-align:top;}
+.left{margin-right:20px;}
+.main{border:1px solid #BBB;background:#F9F9F9;padding:5px;width:400px;}
+	.mtitle{margin-bottom:10px;padding:5px;border-bottom:1px solid #BBB;}
+
+label,button{cursor:pointer;}
+</style>
+</head>
+
+<body>
+
+<div class="inline-block left">
+<script language="JavaScript" type="text/javascript" src="https://vhss.oddcast.com/vhost_embed_functions_v2.php?acc=3077602&js=1"></script><script language="JavaScript" type="text/javascript">AC_VHost_Embed(3077602,300,400,'',1,1, 2271749, 0,1,0,'58124f94904e9edb96da691f3dceacfa',9);</script>
+<script type="text/javascript">
+	function falar(texto)
+	{
+		sayText(texto,5,6,2);
+	}
+	
+	
+	function responder()
+	{
+		var valor = get_resposta();
+		if(valor=="")
+		{
+			falar("Selecione uma opção antes de clicar no botão");
+			return;
+		}
+		
+		if(valor=="Abrahão")
+		{
+			falar("Você acertou! O diretor da empresa é o Abrahão.");
+			return;
+		}
+		
+		falar("Resposta errada! "+valor+" não é o diretor da empresa.");
+		return;
+	}
+	
+	function get_resposta()
+	{
+		var radios = document.getElementsByName('cdir');
+		var radioLength = radios.length;
+		
+		var retorno = "";
+		for(var i=0;i<radioLength;i++)
+		{
+			if(radios[i].checked) retorno = radios[i].value;
+		}
+		
+		return retorno;
+	}
+</script>
+<br>
+<input type="text" id="itexto"> <button onClick="falar(document.getElementById('itexto').value)">Falar</button>
+</div>
+
+<div class="inline-block main">
+	<div class="mtitle">Qual é o nome do diretor da empresa Rede Industrial?
+    <a href='javascript:void(0);' onclick="falar('Qual é o nome do diretor da empresa Rede Industrial?')">[Falar]</a></div>
+    <button style="float:right;padding:7px;cursor:pointer;" onclick="responder()">Responder</button>
+    <label><input type="radio" name="cdir" value="Pedro"> Pedro</label><br>
+    <label><input type="radio" name="cdir" value="Abrahão"> Abrahão</label><br>
+    <label><input type="radio" name="cdir" value="Josias"> Josias</label><br>
+    <label><input type="radio" name="cdir" value="Matheus"> Matheus</label><br>
+    <label><input type="radio" name="cdir" value="Carolina"> Carolina</label><br>
+</div>
+
+</body>
+</html>

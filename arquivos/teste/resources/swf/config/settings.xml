@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+
+<componentSettings>
+<areaWidth>660</areaWidth> <!-- default: 590 -->
+<areaHeight>600</areaHeight> <!-- default: 300 -->
+<aligment>center,center</aligment> <!-- horizontal can be "left" "center" or "right", vertical can be "top" "center" or "bottom"-->
+<positionOffset>0,-45</positionOffset>
+<radius>210</radius> <!-- default: 180 -->
+<axisAngle>0</axisAngle>
+<elevation>30</elevation>
+<backZoom>60</backZoom>
+<backAlpha>95</backAlpha>
+<backBlur>8,8,2</backBlur>
+<areaOfEff>100</areaOfEff> <!-- percentage -->
+<rotationSpeed>40</rotationSpeed> <!-- default: 120 -->
+<initialScrollRotation>0</initialScrollRotation>
+<extraHoverZone>0,50</extraHoverZone>
+<deadZone>25</deadZone> <!-- percentage -->
+<mouseRollArea>50</mouseRollArea><!-- percentage -->
+<showDebugArea>off</showDebugArea>
+<showLogo>images/png/cpcmmin2.png,100,normal,120,140,0,0</showLogo> <!-- images/png/demo-logo.png,100,normal,120,140,0,0 // please read help for all available settings -->
+<rotateWithMouse>on</rotateWithMouse>
+<delayAfterMouseOut>2</delayAfterMouseOut> 
+</componentSettings>
+
+<backgroundSettings>
+<type>external</type> <!-- can be "color" "external" "library" or "none" -->
+<param>images/png/fundoswf2.png</param> <!-- can be hex color, image path or library id, please read help for details -->
+<backGroundAlpha>100</backGroundAlpha>
+<backgroundScaleType>stretch</backgroundScaleType> <!-- "original" or "stretch" -->
+</backgroundSettings>
+
+<itemsSettings>
+<defaultZoom>90</defaultZoom>
+<fixedItemWidth>100</fixedItemWidth>
+<fixedItemHeight>100</fixedItemHeight>
+<rotation>0</rotation>
+<selectItemOnClick>off</selectItemOnClick>
+<stopRotatingOnHover>off</stopRotatingOnHover>
+<useGlowOnHover>on,off,off,10,5</useGlowOnHover> <!-- please read help for all available settings -->
+<normalStrokeSize>0</normalStrokeSize>
+<normalStrokeColor>0x0000ff</normalStrokeColor>
+<normalStrokeAlpha>0</normalStrokeAlpha>
+<mouseOverStrokeSize>10</mouseOverStrokeSize>
+<mouseOverStrokeColor>0x3cc1ff</mouseOverStrokeColor>
+<mouseOverStrokeAlpha>80</mouseOverStrokeAlpha>
+<selectedStrokeSize>15</selectedStrokeSize>
+<selectedStrokeColor>0x64addf</selectedStrokeColor>
+<selectedStrokeAlpha>100</selectedStrokeAlpha>
+<loaderColor>0xffffff</loaderColor>
+<loaderScale>110</loaderScale>
+<loaderAlpha>30</loaderAlpha>
+<loaderRotationSpeed>5</loaderRotationSpeed>
+</itemsSettings>
+
+<reflectionSettings>
+<enableReflections>on</enableReflections>
+<reflectionDistance>30</reflectionDistance>
+<reflectionAlpha>10</reflectionAlpha>
+<reflectionHeight>120</reflectionHeight>
+<reflectionBlur>on,0,10,1</reflectionBlur> <!-- on/off, blurX, blurY, quality -->
+<topAlpha>100</topAlpha>
+<bottomAlpha>0</bottomAlpha>
+<gradientSize>100</gradientSize>
+<gradientBalance>50</gradientBalance>
+<gradientAngle>90</gradientAngle>
+</reflectionSettings>
+
+<tooltipSettings>
+<showType>mouseFollow</showType> <!-- can be : "mouseFollow" "alwaysVisible" "visibleByMouse" or "off" -->
+<tooltipScale>fixed</tooltipScale> <!-- can be : "on" "off" or "fixed" -->
+<cornerRadius>15</cornerRadius> <!-- 0 for square corners, >1 for round corners, ex 6 -->
+<vPosition>top</vPosition> <!-- can be : "top" "center" or "bottom" -->
+<vAligment>top</vAligment> <!-- can be : "top" "center" or "bottom" -->
+<hPosition>center</hPosition> <!-- can be : "left" "center" or "right" -->
+<hAligment>center</hAligment> <!-- can be : "left" "center" or "right" -->
+<tooltipTextPadding>14,14,14,14</tooltipTextPadding> <!-- sets left, top, right and bottom tooltip text padding -->
+<offset>50-30</offset>
+<defaultTextColour>0xffffff</defaultTextColour>
+<defaultTextSize>12</defaultTextSize>
+<defaultTextAlign>left</defaultTextAlign>  <!-- can be : "left" "center" or "right" -->
+<topBgColour>0x003399</topBgColour>
+<bottomBgColour>0x000000</bottomBgColour>
+<gradientBalance>50</gradientBalance>
+<backgroundAlpha>70</backgroundAlpha>
+<strokeSize>0</strokeSize>
+<strokeColor>0x5f5f5f</strokeColor>
+<strokeAlpha>100</strokeAlpha>
+<effects></effects> <!-- supports multiple effects, please read the help file for a full description -->
+</tooltipSettings>
+
+<mouseOverSettings>
+<animationTime>0.5</animationTime>
+<animationType>Regular,easeOut</animationType> <!-- please read help for all available options -->
+    <effectsOnHover>scale:130,130;brighten:30;desaturate:0</effectsOnHover> <!-- please read help for all available effects -->
+<effectOnOtherItems>scale:100,100;brighten:0;desaturate:70</effectOnOtherItems> <!-- please read help for all available effects -->
+</mouseOverSettings>
+
+<autoPlaySettings>
+<enableAutoPlay>on</enableAutoPlay>
+<autoPlaySpeed>45</autoPlaySpeed>
+<activeAfterItemsLoaded>max</activeAfterItemsLoaded> <!-- number or set to "max" to wait until all items are loaded -->
+<autoPlayType>noLoop,Back,easeInOut,1,60</autoPlayType> <!-- please read help for all available options -->
+<stopAutoPlayOnHover>on</stopAutoPlayOnHover>
+</autoPlaySettings>
+
+
+<scrollUsingSlider>
+<enableSlider>off</enableSlider>
+<bgrWidth>100</bgrWidth>
+<sliderRotation>45</sliderRotation>
+<tapBgrWidth>50</tapBgrWidth>
+<positionOffset>35,50</positionOffset>
+<tapOffsetX>5</tapOffsetX>
+<mouseWheel>on</mouseWheel>
+<mouseWheelDirection>1</mouseWheelDirection>
+<scrollAnimationType>Strong,easeOut</scrollAnimationType> <!-- please read help for all available options -->
+<scrollAnimationTime>1</scrollAnimationTime>
+<arrowsAnimationPower>60</arrowsAnimationPower>
+</scrollUsingSlider>
+
+
+</settings>

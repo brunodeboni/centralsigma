@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<content>
+
+<item>
+<path>images/png/HDUTIL.png</path> <!-- path to the thumbnail, it can be a swf or an image (jpg, png) -->
+<description><![CDATA[<span><b>HD ÚTIL</b></span><br>Biblioteca virtual com milhares de publicações de arquivos <br>técnicos sobre manutenção e outros assuntos de interesse. <br>O download de arquivos é 100% gratuito e você também pode <br>compartilhar seus arquivos técnicos para outros usuários..]]></description> <!-- html formatted description that shows up in the tooltip -->
+<action>navigate</action> <!-- action to take when the item is clicked, all the possible options are outlined in the help file -->
+<param>http://www.hdutil.com.br/,_blank</param> <!-- parameter used by the action tag -->
+</item>
+
+<item>
+<path>images/png/PAGHOJE.png</path>
+<description><![CDATA[<span><b>PAG HOJE</b></span><br>Portal online para compra de produtos e serviços da Rede Industrial,<br> onde estão disponíveis manuais, licenças de sistemas, hardwares e <br>equipamentos, para compra online, com diferenciadas formas de pagamento.]]></description>
+<action>navigate</action>
+<param>http://www.paghoje.com.br/,_blank</param>
+</item>
+
+<item>
+<path>images/png/TECHCHAT.png</path>
+<description><![CDATA[<span><b>TECHCHAT</b></span><br>Rede Social desenvolvida exclusivamente para profissionais do ramo de <br>Engenharia de Manutenção / PCM. Crie seu perfil, conheça outros profissionais <br>do ramo, troque experiências, participe de grupos de discussão de temas técnicas, <br>divulgue seus produtos e serviços. A associação é totalmente gratuita!]]></description>
+<action>navigate</action>
+<param>http://www.tecchat.com.br/,_blank</param>
+</item>
+
+<item>
+<path>images/png/TESTECONHECIMENTO.png</path>
+<description><![CDATA[<span><b>TESTE DE CONHECIMENTO</b></span><br>O Teste de Conhecimento é um sistema de testes online onde você pode <br>responder a perguntas para testar seu conhecimento em diversas áreas, <br>através de testes interativos e inteligentes! Para isto basta que seja <br>realizado um rápido cadastro totalmente gratuito e você terá acesso a <br>inúmeros testes para testar e aumentar seus conhecimentos..]]></description>
+<action>navigate</action>
+<param>http://www.testedeconhecimento.com.br/,_blank</param>
+</item>
+
+<item>
+<path>images/png/FLLECHA.png</path>
+  <description><![CDATA[<span><b>FLLECHA</b></span><br>O Fllecha é um sistema de envio de SMS em massa. Todos os alunos do <br>CPCM são notificados por SMS sobre a realização de inscrições e horários <br>e datas de suas aulas, entre outros comunicados, utilizando a tecnologia <br>Fllecha. Utilize também o Fllecha em sua empresa ou em suas comunicações <br>pessoas por SMS e surpreenda-se.]]></description>
+<action>navigate</action>
+<param>http://fllecha.com.br/,_blank</param>
+</item>
+
+<item>
+<path>images/png/CENTRALSIGMA2.png</path>
+<description><![CDATA[<span><b>CENTRAL SIGMA</b></span><br>A Central SIGMA é o portal online onde você encontrará acesso a inúmeras<br> informações técnicas e comerciais referentes ao SIGMA – Sistema de Gerenciamento <br>de Manutenção que é usado como base para os treinamentos e demonstrações <br>práticas nos cursos do CPCM. Neste site inclusive você poderá realizar download <br>do SIGMA para começar a utilização imediata em sua empresa com os conhecimentos <br>adquiridos nos treinamentos.]]></description>
+<action>navigate</action>
+<param>http://www.centralsigma.com.br,_blank</param>
+</item>
+
+<item>
+<path>images/png/VIDEOTECA.png</path>
+<description><![CDATA[<span><b>VIDEOTECA</b></span><br>Videoteca online com mais de 200 vídeos que demonstram o passo-a-passo para <br>utilização de recursos e módulos do SIGMA. Veja e reveja estes vídeos quantas <br>vezes for necessários para o seu aprendizado!.]]></description>
+<action>navigate</action>
+<param>http://www.centralsigma.com.br/index.php?option=com_content&view=category&layout=blog&id=40&Itemid=864,_blank</param>
+</item>
+
+<item>
+<path>images/png/BIBLIOTECA.png</path>
+<description><![CDATA[<span><b>BIBLIOTECA</b></span><br>Biblioteca online com mais de 1.000 páginas publicadas entre manuais e <br>arquivos com o passo-a-passo para utilização de recursos e módulos do SIGMA.]]></description>
+<action>navigate</action>
+<param>http://www.centralsigma.com.br/index.php?option=com_content&view=article&id=596&Itemid=709,_blank</param>
+</item>
+
+
+</content>

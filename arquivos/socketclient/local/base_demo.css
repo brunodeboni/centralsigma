@@ -1,0 +1,30 @@
+*{margin:0;padding:0;}
+
+body{
+	font-family:Arial, Tahoma, Geneva, sans-serif;
+}
+
+#modem{
+	margin:50px auto;
+	width:550px;
+}
+	#modem_header{
+		padding:20px;
+		text-align:center;
+		font-size:24px;
+	}
+	
+	#modem_portas td{
+		padding:10px;
+	}
+	
+	
+	
+.stdown{
+	background:#FCC;
+	color:#000;
+}
+.stup{
+	background:#CFC;
+	color:#000;
+}
