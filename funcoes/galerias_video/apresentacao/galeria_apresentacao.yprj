@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Gallery version="1.2">
+    <Settings>
+        <CloseOnComplete>false</CloseOnComplete>
+        <FixMeta>true</FixMeta>
+        <FtpIndex>0</FtpIndex>
+        <FtpServer>//centralsigma:b+R2BEDUZzjOb0f5uV01Cg==@centralsigma.com.br:21</FtpServer>
+        <GalleryName>galeria_apresentacao</GalleryName>
+        <OverlayColor>#f0f0f0</OverlayColor>
+        <PublishFileName>C:/Users/Usuario/Desktop/apresentacao/index.html</PublishFileName>
+        <PublishIndex>index.html</PublishIndex>
+        <PublishPath>C:/Users/Usuario/Desktop/apresentacao</PublishPath>
+        <PublishPreview>true</PublishPreview>
+        <PublishType>file</PublishType>
+        <ThumbArrow>play02.png</ThumbArrow>
+        <ThumbColumns>2</ThumbColumns>
+        <ThumbFormat>png</ThumbFormat>
+        <ThumbHeight>190</ThumbHeight>
+        <ThumbQuality>100</ThumbQuality>
+        <ThumbTemplate>Mac (with titles)</ThumbTemplate>
+        <ThumbWidth>250</ThumbWidth>
+        <TitleType>text</TitleType>
+        <VideoHeight>480</VideoHeight>
+        <VideoTemplate>5. Facebook 2</VideoTemplate>
+        <VideoVolume>100</VideoVolume>
+        <VideoWidth>640</VideoWidth>
+        <htmlcharset></htmlcharset>
+    </Settings>
+    <Videos/>
+</Gallery>

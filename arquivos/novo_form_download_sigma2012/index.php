@@ -34,7 +34,7 @@ switch($arquivo){
 <body>
 
 <div id="content">
-	<div id="form-titulo">Formulário de Download do Sigma 2012 - <span style="color:#369;"><?php echo $arquivo_nome; ?></span></div>
+	<div id="h2">Formulário de Download do Sigma 2012 - <?php echo $arquivo_nome; ?></div>
     
 	<div class="content">
 		<ul class="menubar">

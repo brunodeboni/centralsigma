@@ -1,0 +1,18 @@
+#conteudo {
+	background-image: url(../img/fundo.jpg);
+	width: 716;
+	height: 537;
+	
+}
+
+#i0 {
+	position: absolute;
+	top: 15px;
+	left:5px;
+}
+
+#like {
+	position: absolute;
+	top: 150px;
+	left: 5px;
+}

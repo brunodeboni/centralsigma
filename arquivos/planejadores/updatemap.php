@@ -25,7 +25,7 @@ $service = new Google_FusiontablesService($client);
 
 //$foto = "http://www.centralsigma.com.br/cpcmteste/resources/img/perfil/pp.png";
 $nome = $_POST['nome'];
-$endereco = $_POST['cidade'].", ".$_POST['uf'];
+$endereco = $_POST['endereco'].", ".$_POST['cidade'].", ".$_POST['uf'];
 $facebook = $_POST['facebook'];
 $linkedin = $_POST['linkedin'];
 $empresa = $_POST['empresa'];

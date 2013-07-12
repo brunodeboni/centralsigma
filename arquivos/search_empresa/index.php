@@ -20,12 +20,13 @@ foreach ($resultado as $res) {
 	<meta charset="utf-8">
 	<title>Pesquisa de Empresas por Segmento</title>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script src="bxslider/jquery.bxslider.min.js"></script>
-	<link href="bxslider/jquery.bxslider.css" rel="stylesheet" />
+	<script src="../plugins/bxslider/jquery.bxslider.min.js"></script>
+	<link href="../plugins/bxslider/jquery.bxslider.css" rel="stylesheet" />
 	<style>
 	#container {
 		margin: auto;
-		width: 250px;
+		width: 200px;
+		height: 400px;
 		border: 1px solid #090909;
 		font-family: Arial, sans-serif;
 		-webkit-border-radius: 15px;
@@ -35,12 +36,12 @@ foreach ($resultado as $res) {
 		background: #f8f8f8;
 	}
 	#titulo {
-		padding: 20px;
+		padding: 15px;
 		text-align: center;
 		background-color: #e8490a;
 		font-weight: bold;
 		color: #FFF;
-		font-size: 18px;
+		font-size: 16px;
 		border-top-right-radius: 13px;
 		border-top-left-radius: 13px;
 		-webkit-border-top-right-radius: 13px;
@@ -48,8 +49,8 @@ foreach ($resultado as $res) {
 	}
 	#form_segmentos {
 		margin-top: 10px;
-		margin-left: 30px;
-		font-size: 16px;
+		margin-left: 10px;
+		font-size: 14px;
 		font-weight: bold;
 		color: #090909;
 	}
@@ -63,7 +64,7 @@ foreach ($resultado as $res) {
 		background-color: #e8490a;
 		font-weight: bold;
 		color: #FFF;
-		font-size: 16px;
+		font-size: 14px;
 		border: 0;
 		-webkit-border-radius: 25px;
 		border-radius: 25px;
@@ -86,7 +87,7 @@ foreach ($resultado as $res) {
 	<form id="form_segmentos" action="" method="post">
 		<span>Selecione um segmento:</span><br>
 		<select id="segs" name="segmentos">
-			<option value="">Selecione...</option>
+			<option value="">Todas</option>
 			<?php foreach ($empresa as $segmento => $emp) {
 				echo '<option value="'.$segmento.'">'.$segmento.'</option>';
 			}?>
@@ -95,7 +96,7 @@ foreach ($resultado as $res) {
 		
 		<span>Selecione um Estado:</span><br>
 		<select name="uf">
-			<option value="">Selecione...</option>
+			<option value="">Todos</option>
 			<option value="AC">Acre</option>
             <option value="AL">Alagoas</option>
             <option value="AP">Amapá</option>
@@ -131,14 +132,22 @@ foreach ($resultado as $res) {
 	
 	<div id="resultado">
 	<?php 
-	if (isset($_POST['segmentos']) && $_POST['segmentos'] != "") {
-		$segmento = $_POST['segmentos'];
+	if (isset($_POST['segmentos'])) {
 		
-		$sql = "select logo, empresa, site from empresas_segmento where segmento = :segmento";
-		$prep = array(':segmento' => $segmento);
-		if ($_POST['uf'] != "") {
+		$sql = "select logo, empresa, site from empresas_segmento ";
+		if ($_POST['segmentos'] != "" && $_POST['uf'] == "") {
+			$segmento = $_POST['segmentos'];
+			$sql .= "where segmento = :segmento";
+			$prep[':segmento'] = $segmento;
+		}else if ($_POST['segmentos'] == "" && $_POST['uf'] != "") {
 			$uf = $_POST['uf'];
-			$sql .= " and uf = :uf";
+			$sql .= "where uf = :uf";
+			$prep[':uf'] = $uf;
+		}else {
+			$segmento = $_POST['segmentos'];
+			$uf = $_POST['uf'];
+			$sql .= "where segmento = :segmento and uf = :uf";
+			$prep[':segmento'] = $segmento;
 			$prep[':uf'] = $uf;
 		}
 		$query = $db->prepare($sql);
@@ -156,10 +165,8 @@ foreach ($resultado as $res) {
 			}
 			echo '</ul>';
 		}else {
-			echo '<div style="padding: 12px;">Não há resultados neste Estado.</div>';
+			echo '<div style="padding: 12px;">Não há resultados deste segmento ou neste Estado.</div>';
 		}
-	}else {
-		echo '<div style="padding: 12px;">Selecione um segmento para realizar a pesquisa.</div>';
 	}
 	
 	?>
@@ -169,8 +176,8 @@ foreach ($resultado as $res) {
 $(document).ready(function(){
 	//Se o nome do segmento for maior que o espaço
 	$('#segs option').each(function() {
-		if( $(this).val().length > 27) {
-			var new_opt = $(this).val().substring(0, 24) + '...';
+		if( $(this).val().length > 20) {
+			var new_opt = $(this).val().substring(0, 19) + '...';
 			$(this).attr('title', $(this).val());
 			$(this).html(new_opt);
 		}
@@ -178,7 +185,7 @@ $(document).ready(function(){
 	
 	//Slider de logos
 	$('.bxslider').bxSlider({
-		slideWidth: 200,
+		slideWidth: 150,
 		mode: 'horizontal',
 		hideControlOnEnd: true,
 		infiniteLoop: false,

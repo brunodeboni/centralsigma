@@ -39,6 +39,7 @@ mysql_select_db("centralsigma02",$conn) or die("Não foi possivel selecionar o B
     <td>UF
     <td>Nome
     <td>Telefone
+    <td>Celular
     <td>E-Mail
     <td>Empresa
     <td>Downloads
@@ -81,6 +82,7 @@ $qry1 = mysql_query($sql1,$conn);
 			echo "<td><a href=\"pesq_empresa.php?uf=".$res['uf']."\">$res[uf]</a>";
 			echo "<td>".utf8_encode($res['nome']);
 			echo "<td>$res[telefone]";
+			echo "<td>$res[celular]";
 			echo "<td>$res[email]";
 			echo "<td><a href=\"pesq_empresa.php?empresa=".$res['empresa']."\">$res[empresa]</a>";
                        
@@ -228,6 +230,7 @@ if (isset($_POST['empresa']) ) {
 				<td><b>Pa&iacute;s</b>
 				<td><b>Nome</b>
 				<td><b>Telefone</b>
+				<td><b>Celular</b>
 				<td><b>E-mail</b>
     			<td><b>Download</b>	
 	';
@@ -238,6 +241,7 @@ if (isset($_POST['empresa']) ) {
 		$pais = $res['pais'];
 		$nome = $res['nome'];
 		$telefone = $res['telefone'];
+		$celular = $res['celular'];
 		$email = $res['email'];
 		
 		$data = mysql_fetch_row(mysql_query("SELECT DATE_FORMAT('$res[data]','%d/%m/%Y')"));
@@ -256,6 +260,7 @@ if (isset($_POST['empresa']) ) {
 				<td>'.$pais.'
 				<td>'.$nome.'
 				<td>'.$telefone.'
+				<td>'.$celular.'
 				<td>'.$email.'
 		';
 		$arquivo = $res["id_arquivo"];

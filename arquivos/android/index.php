@@ -82,7 +82,7 @@
 	<div>
 		<h1>Rede Industrial distribui smartphones e tablets para a gestão da manutenção</h1>
 		
-		<img src="img/android.png" width="100%" style="margin-left: 10px;">
+		<img src="img/androide.png" width="100%" style="margin-left: 10px;">
 		
 		<h3><u>SIGMA ANDROID</u></h3>
 

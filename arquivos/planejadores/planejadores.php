@@ -30,7 +30,7 @@
 	text-decoration: none;">Cadastre-se</a>
 	</div>
 	<div style="margin-top: 40px;">
-		<span><b>Veja quem já faz parte da nossa Rede:</b></span><br><br>
+		<span><b>Veja no mapa abaixo quem já faz parte da nossa Rede:</b></span><br>
 		 
 		<div id="map-canvas" style="border: 1px solid #fff;	width:680px; height: 500px;"></div>
 			
