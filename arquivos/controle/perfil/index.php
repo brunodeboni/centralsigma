@@ -148,11 +148,17 @@
 	
 	</script>
 <?php 
+include '../../../conexoes.inc.php';
+$db = Database::instance('centralsigma02');
 
-if (isset($_POST['pesquisar'])) {
+$sql = "select count(id) as total from cw_perfil where planejador = 'sim'";
+$query = $db->query($sql);
+$resultado = $query->fetchAll();
+foreach ($resultado as $res) {
+	echo "<b>Total de planejadores cadastrados no mapa:</b> ".$res['total'];
+}
 	
-	include '../../../conexoes.inc.php';
-	$db = Database::instance('centralsigma02');
+if (isset($_POST['pesquisar'])) {
 	
 	if (isset ($_POST['nome'])) {
 		$nome = $_POST['nome'];

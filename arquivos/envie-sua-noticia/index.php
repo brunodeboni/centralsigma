@@ -171,7 +171,7 @@ if (isset ($_POST['nome'])) {
 	$assunto = $_POST['assunto'];
 	$noticia = $_POST['noticia'];
 	
-	/*
+	
 	//Conexão banco de dados
 	require '../../conexoes.inc.php';
 	$db = Database::instance('centralsigma02');
@@ -191,8 +191,9 @@ if (isset ($_POST['nome'])) {
 		':assunto' => $assunto,
 		':noticia' => $noticia,
 	));
-	*/
 	
+	/*
+	//Enviar e-mail com a notícia
 	$headers = 'MIME-Version: 1.0'."\r\n";
 	$headers .= 'Content-type: text/html; charset=utf-8'."\r\n";
 	$headers .= 'From: <'.$email.'>,<news@redeindustrial.com.br>'."\r\n";
@@ -224,6 +225,7 @@ if (isset ($_POST['nome'])) {
 
 ';
 	$success = mail('news@redeindustrial.com.br', 'Noticias', $message, $headers);
+	*/
 	
 	if ($success) {
 		echo '<div id="div_sucesso">Notícia enviada com sucesso!</div>';

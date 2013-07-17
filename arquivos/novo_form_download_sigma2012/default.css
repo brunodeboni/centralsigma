@@ -42,6 +42,15 @@ ul.links li{margin-right:20px;display:inline;}
 .menubar .submenu li a:hover{background:#006699;color:#FFF;}
 .menubar li:hover .submenu{display:block;}
 
+#div_erro{
+	display: none;
+	margin-bottom:10px;
+	width:90%;
+	padding:5px;
+	background:#FEE;
+	color:#900;
+	font-size: 14px;
+}
 
 .hlinput{border:2px solid #C00;}
 .clear{clear:both;}

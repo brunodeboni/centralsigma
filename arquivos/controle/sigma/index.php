@@ -151,6 +151,7 @@ $('.aj').pressEnter(function(){
 <br>
 <a class="btn" href="?limite_d=10000">Mostrar todos</a>
 <a class="btn" href="relatorio_ultimos_downloads.php" target="_blank">Gerar Relatório em PDF</a>
+<a class="btn" href="grafico_ultimos_downloads.php">Gráficos</a>
 <br>
 </div>
 

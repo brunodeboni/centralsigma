@@ -67,21 +67,21 @@ function getUF(pais){
 }
 
 function verificaDados(){
-	if($("#inp_nome").val()==""){$("#inp_nome").focus();$("#inp_nome").addClass("hlinput");return false;}
-	if($("#inp_email").val()=="" || !checarEmail($("#inp_email").val()) ){$("#inp_email").focus();$("#inp_email").addClass("hlinput");return false;}
-	if($("#inp_empresa").val()==""){$("#inp_empresa").focus();$("#inp_empresa").addClass("hlinput");return false;}
-	if($("#inp_telefone").val()==""){$("#inp_telefone").focus();$("#inp_telefone").addClass("hlinput");return false;}
-	if($("#pais").val()==""){$("#pais").focus();$("#pais").addClass("hlinput");return false;}
-	if($("#UF").val()==""){$("#UF").focus();$("#UF").addClass("hlinput");return false;}
-	if($("#UF2").val()==""){$("#UF2").focus();$("#UF2").addClass("hlinput");return false;}
+	if($("#inp_nome").val()==""){$("#div_erro").show(); $("#div_erro").html('Por favor, informe seu nome.'); return false;}
+	if($("#inp_email").val()=="" || !checarEmail($("#inp_email").val()) ){$("#div_erro").show(); $("#div_erro").html('Por favor, informe um e-mail válido.'); return false;}
+	if($("#inp_empresa").val()==""){$("#div_erro").show(); $("#div_erro").html('Por favor, informe sua empresa.'); return false;}
+	if($("#inp_telefone").val()==""){$("#div_erro").show(); $("#div_erro").html('Por favor, informe seu telefone.'); return false;}
+	if($("#pais").val()==""){$("#div_erro").show(); $("#div_erro").html('Por favor, informe seu país.'); return false;}
+	if($("#UF").val()==""){$("#div_erro").show(); $("#div_erro").html('Por favor, informe seu estado.'); return false;}
+	if($("#UF2").val()==""){$("#div_erro").show(); $("#div_erro").html('Por favor, informe seu estado.');return false;}
 	
 	nn = gioplugin.telefone.decodenum( $('#inp_telefone').val() );
         if( nn ) $('#inp_telefone').val(nn);
-	else{$("#inp_telefone").focus();$("#inp_telefone").addClass("hlinput");return false;}
+	else{$("#div_erro").show(); $("#div_erro").html('Por favor, informe um número de telefone válido.'); return false;}
 	
 	nn = gioplugin.telefone.decodenum( $('#inp_celular').val() );
         if( nn ) $('#inp_celular').val(nn);
-	else{$("#inp_celular").focus();$("#inp_celular").addClass("hlinput");return false;}
+	else{$("#div_erro").show(); $("#div_erro").html('Por favor, informe um número de celular válido.'); return false;}
 	
 	$("#form_download").submit();
 }

@@ -109,7 +109,10 @@ switch($arquivo){
         <span class="sp_celular">Celular</span>: <span style="color:#666;font-size:14px;float:right;">(XX) XXXX-XXXX</span><br/>
         <input type="text" name="celular" id="inp_celular" class="block telefone" /><br/>
         
-        <br class="clear" /><br/>
+        <br class="clear" />
+        <div id="div_erro"></div>
+        <br/>
+        
         <input type="hidden" name="origem" value="<?php echo $origem; ?>" />
         <button type="button" onClick="verificaDados()">Download</button>
     </form>

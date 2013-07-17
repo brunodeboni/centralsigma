@@ -83,7 +83,6 @@ $db = Database::instance('centralsigma02');
 			<input type="checkbox" class="colaboradores" name="colaboradores[]" value="Davi Utzig">Davi Utzig
 			<input type="checkbox" class="colaboradores" name="colaboradores[]" value="Henrique Weber">Henrique Weber
 			<input type="checkbox" class="colaboradores" name="colaboradores[]" value="Josias Boone">Josias Boone
-			<input type="checkbox" class="colaboradores" name="colaboradores[]" value="Pedro Lima">Pedro Lima
 		</div>
 		<div id="st_comercial" class="colabs">
 			<input type="checkbox" class="colaboradores" name="colaboradores[]" value="Adriana Xavier">Adriana Xavier
