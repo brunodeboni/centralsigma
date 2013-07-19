@@ -43,8 +43,8 @@
 		text-align: center;
 		font-weight: bold;
 		font-size: 18px;
-		background: #f7f7f7;
-		color: #E8490A;
+		background: #20B2AA;
+		color: #FFF;
 		-webkit-border-radius: 5px;
 		border-radius: 5px;
 		box-shadow: 2px 2px 3px #E6E6E6;
@@ -54,7 +54,7 @@
 		line-height: 0;
 		font-weight: bold;
 		font-size: 30px;
-		color: #E8490A;
+		color: #008B8B;
 		text-align: center;
 	}
 	.conteudo {
@@ -62,17 +62,17 @@
 		margin-top: 10px;
 		margin-left: 15px;
 		font-weight: bold;
-		color: #888;
+		color: #333;
 	}
 	.msg {
-		color: red; 
+		color: #008B8B; 
 	}
 	.botao {
 		padding: 10px 20px;
 		text-decoration: none;
 		font-weight: bold;
 		color: #FFF;
-		background: #E8490A;
+		background: #20B2AA;
 		-webkit-border-radius: 5px;
 		border-radius: 5px;
 		box-shadow: 1px 1px 3px #888;
@@ -81,12 +81,12 @@
 	#large-btn {
 		position: absolute;
 		top: 370px;
-		left: 310px;
+		left: 320px;
 		padding: 15px 80px;
 		text-decoration: none;
 		font-weight: bold;
 		color: #FFF;
-		background: #E8490A;
+		background: #20B2AA;
 		-webkit-border-radius: 5px;
 		border-radius: 5px;
 		box-shadow: 1px 1px 3px #888;
@@ -140,7 +140,7 @@
 		<p style="text-align: center;"><a target="_parent" href="http://joomla31.centralsigma.com.br/index.php/sigma/downloads/sigma-2012-enterprise" class="botao">Baixe agora</a></p>
 	</div>
 	<div>
-		<a id="large-btn" href="index.php/sigma/downloads">Veja a tabela completa</a>
+		<a id="large-btn" href="http://joomla31.centralsigma.com.br/index.php/sigma/downloads" target="_parent">Veja a tabela completa</a>
 	</div>
 </div>
 </body>

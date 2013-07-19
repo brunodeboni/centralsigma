@@ -21,7 +21,7 @@ foreach ($resultado as $res) {
 	<title>Pesquisa de Empresas por Segmento</title>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script src="../plugins/bxslider/jquery.bxslider.min.js"></script>
-	<link href="../plugins/bxslider/jquery.bxslider.css" rel="stylesheet" />
+	<link href="../plugins/bxslider/jquery.bxslider.css" rel="stylesheet">
 	<style>
 	#container {
 		margin: auto;
@@ -38,7 +38,7 @@ foreach ($resultado as $res) {
 	#titulo {
 		padding: 15px;
 		text-align: center;
-		background-color: #e8490a;
+		background-color: #008B8B;
 		font-weight: bold;
 		color: #FFF;
 		font-size: 16px;
@@ -61,7 +61,7 @@ foreach ($resultado as $res) {
 	}
 	#btn {
 		padding: 5px 30px;
-		background-color: #e8490a;
+		background-color: #008B8B;
 		font-weight: bold;
 		color: #FFF;
 		font-size: 14px;

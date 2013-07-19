@@ -6,6 +6,8 @@
 </head>
 <body>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
 <div style="padding: 5px 10px 30px 10px; color: #00688B; background: #A6D0E7; font-family: Verdana, sans-serif; font-size: 16px;">
 	<h1 style="text-align:center;">Rede de Planejadores de Manutenção SIGMA</h1>
 	<div>
@@ -29,6 +31,9 @@
 	padding:6px 24px;
 	text-decoration: none;">Cadastre-se</a>
 	</div>
+	
+	<div id="count_map"></div>
+	
 	<div style="margin-top: 40px;">
 		<span><b>Veja no mapa abaixo quem já faz parte da nossa Rede:</b></span><br>
 		 
@@ -37,6 +42,12 @@
 	</div>
 </div>
 <script>
+$(document).ready(function() { 
+	 $.post('/arquivos/planejadores/totalmap.php', {}, function(data) {
+	    $('#count_mapa').html('Total de planejadores cadastrados: ' + data);
+	 });
+})
+
 function initialize() {
 	var map = new google.maps.Map(document.getElementById('map-canvas'), {
 		center: new google.maps.LatLng(-14.964268129360427, -46.26117305624996),

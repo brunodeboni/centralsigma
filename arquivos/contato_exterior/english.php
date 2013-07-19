@@ -5,11 +5,12 @@
 	<title>Contato Exterior</title>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js" type="text/javascript"></script>
-	<link type="text/css" rel="stylesheet" href="default.css">
+	<link href="../default.css" rel="stylesheet">
+	
 </head>
 <body>
-<div id="content">
-	<div id="form-titulo">Contact us</div>
+<div id="container">
+	<h1>Contact us</h1>
 	<div style="padding-bottom: 10px;">Please fill in your information below and choose how to contact us.</div>
 	<div id="div_erro"></div>
 	<form id="form_idiomas" action="" method="post">
@@ -34,7 +35,7 @@
 		<input type="hidden" name="atendeu" value="Josias">
 		<button type="button" onclick="verificaDados()">Go</button>
 	</form>
-</div>
+
 <script>
 
 function verificaDados() {
@@ -59,8 +60,6 @@ function checarEmail(mail){
 		{return false;}
 }
 </script>
-</body>
-</html>
 
 <?php 
 
@@ -94,12 +93,16 @@ if (isset($_POST['nome'])) {
 	));
 	
 	if ($tipo == "call") {
-		echo 'Thank you for submitting.';
+		echo '<div id="div_sucesso">Thank you for submitting.</div>';
 		header('Location: skype:redeindustrial.josias?call');
 	}else if ($tipo == "chat") {
-		echo 'Thank you for submitting.';
+		echo '<div id="div_sucesso">Thank you for submitting.</div>';
 		header('Location: http://redeindustrial.mysuite.com.br/clientlegume.php?param=hd_chat_gc_cad_chatdep&inf=&sl=rdi&lf=&ca=&cr=&redirect=http://redeindustrial.mysuite.com.br/empresas/rdi/central.php');
 	}
 }
 
 ?>
+
+</div>
+</body>
+</html>

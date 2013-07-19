@@ -46,8 +46,8 @@
 		text-align: center;
 		font-weight: bold;
 		font-size: 18px;
-		background: #f7f7f7;
-		color: #E8490A;
+		background: #20B2AA;
+		color: #FFF;
 		-webkit-border-radius: 5px;
 		border-radius: 5px;
 		box-shadow: 2px 2px 3px #E6E6E6;
@@ -62,8 +62,8 @@
 		text-align: center;
 		font-weight: bold;
 		font-size: 16px;
-		background: #f7f7f7;
-		color: #E8490A;
+		background: #20B2AA;
+		color: #FFF;
 		-webkit-border-radius: 5px;
 		border-radius: 5px;
 		box-shadow: 2px 2px 3px #E6E6E6;
@@ -74,7 +74,7 @@
 		margin-left: 25px;
 		line-height: 0;
 		font-weight: bold;
-		color: #E8490A;
+		color: #008B8B;
 		text-align: center;
 		font-size: 14px;
 	}
@@ -85,10 +85,10 @@
 		margin-top: 10px;
 		margin-left: 25px;
 		font-weight: bold;
-		color: #888;
+		color: #333;
 	}
 	.msg {
-		color: red; 
+		color: #008B8B; 
 	}
 	#header2 {
 		padding: 10px 20px;
@@ -96,8 +96,8 @@
 		border: 1px solid #E6E6E6;
 		font-weight: bold;
 		font-size: 18px;
-		background: #f7f7f7;
-		color: #E8490A;
+		background: #20B2AA;
+		color: #FFF;
 		-webkit-border-radius: 5px;
 		border-radius: 5px;
 		box-shadow: 2px 2px 3px #E6E6E6;
@@ -108,7 +108,7 @@
 	#table1 {
 		font-size: 13px;
 		font-weight: bold;
-		color: #888;
+		color: #333;
 		position: absolute;
 		top: 350px;
 	}
@@ -121,8 +121,8 @@
 		border: 1px solid #E6E6E6;
 		font-weight: bold;
 		font-size: 18px;
-		background: #f7f7f7;
-		color: #E8490A;
+		background: #20B2AA;
+		color: #FFF;
 		-webkit-border-radius: 5px;
 		border-radius: 5px;
 		box-shadow: 2px 2px 3px #E6E6E6;
@@ -133,7 +133,7 @@
 	#table2 {
 		font-size: 13px;
 		font-weight: bold;
-		color: #888;
+		color: #333;
 		position: absolute;
 		top: 640px;
 	}
@@ -146,8 +146,8 @@
 		border: 1px solid #E6E6E6;
 		font-weight: bold;
 		font-size: 18px;
-		background: #f7f7f7;
-		color: #E8490A;
+		background: #20B2AA;
+		color: #FFF;
 		-webkit-border-radius: 5px;
 		border-radius: 5px;
 		box-shadow: 2px 2px 3px #E6E6E6;
@@ -158,7 +158,7 @@
 	#table3 {
 		font-size: 13px;
 		font-weight: bold;
-		color: #888;
+		color: #333;
 		position: absolute;
 		top: 1530px;
 	}
@@ -178,7 +178,7 @@
 		text-decoration: none;
 		font-weight: bold;
 		color: #FFF;
-		background: #E8490A;
+		background: #20B2AA;
 		-webkit-border-radius: 5px;
 		border-radius: 5px;
 		box-shadow: 1px 1px 3px #888;

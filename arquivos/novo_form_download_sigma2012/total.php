@@ -21,13 +21,13 @@
 <html>
 <head><title>Total de Downloads do SIGMA</title>
 <style type="text/css">
-	a,a:link,a:visited{color:#036;text-decoration:none;}
-	a:hover,a:focus{color:#003;}
+	a,a:link,a:visited{color:#008B8B;text-decoration:none;}
+	a:hover,a:focus{color:#008B8B;}
 	body{/*background:#33CCFF;*/}
 </style></head>
 <body>
 <div style="text-align:center;">
-<span style="color:#036;font-weight:bold;font-size:28px;"><?php echo $total; ?></span>
+<span style="color:#008B8B;font-weight:bold;font-size:28px;"><?php echo $total; ?></span>
 <br/>
 
 <a href="http://centralsigma.com.br/index.php?option=com_content&view=article&id=852&Itemid=893" target="_parent">[Download do Sigma]</a>

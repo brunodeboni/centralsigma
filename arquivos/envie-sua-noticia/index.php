@@ -4,68 +4,7 @@
 	<meta charset="utf-8">
 	<title>Envie sua Notícia</title>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<style>
-	#container {
-		width: 600px;
-		margin: 0 auto;
-		padding: 10px;
-		font-family: Arial, sans-serif;
-		color: #090909;
-		background: #FAF0E6;
-	}
-	h1 {
-		text-align: center;
-		margin: 10px auto;
-		padding: 10px;
-		border: 1px solid #888;
-		background: #f8f8f8;
-		color: #D2691E;
-		font-size: 22px;
-	}
-	.block{
-		width:100%;
-		margin:auto;
-		display:block;
-	}
-	button {
-		padding: 5px 30px;
-		background-color: #D2691E;
-		font-weight: bold;
-		color: #FFF;
-		font-size: 16px;
-		border: 0;
-		-webkit-border-radius: 10px;
-		border-radius: 10px;
-		box-shadow: 2px 2px 5px #888;
-		-webkit-box-shadow: 2px 2px 5px #888;
-		
-		
-	}
-	#div_erro {
-		display: none;
-		margin-bottom:10px;
-		width:90%;
-		padding:5px;
-		background:#F0E0E0;
-		color:#900;
-	}
-	.div_erro2 {
-		margin-top:10px;
-		width:90%;
-		padding:5px;
-		background:#F0E0E0;
-		color:#900;
-	}
-	#div_sucesso {
-		margin-top:10px;
-		width:90%;
-		padding:5px;
-		background:#f8f8f8;
-		color:#D2691E;
-		border: 1px solid #D2691E;
-		font-weight: bold;
-	}
-	</style>
+	<link href="../default.css" rel="stylesheet">
 </head>
 <body>
 <div id="container">

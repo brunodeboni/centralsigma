@@ -5,13 +5,13 @@
 	<title>Contato Exterior</title>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js" type="text/javascript"></script>
-	<link type="text/css" rel="stylesheet" href="default.css">
+	<link href="../default.css" rel="stylesheet">
 </head>
 <body>
-<div id="content">
-	<div id="form-titulo">Kontaktieren Sie uns</div>
+<div id="container">
+	<h1>Kontaktieren Sie uns</h1>
 	<div style="padding-bottom: 10px;">Bitte geben Sie Ihre Daten ein und wählen Sie, wie Sie uns zu kontaktieren.</div>
-	<div id="div_erro"></div>
+	
 	<form id="form_idiomas" action="" method="post">
 		<span>Name: </span><br>
 		<input type="text" id="inp_nome" name="nome" class="block"><br>
@@ -32,9 +32,12 @@
 		<input type="radio" name="tipo" value="chat"> Chat
 		<br><br>
 		<input type="hidden" name="atendeu" value="Henrique">
+		
+		<div id="div_erro"></div><br>
+		
 		<button type="button" onclick="verificaDados()">Gehen</button>
 	</form>
-</div>
+
 <script>
 
 function verificaDados() {
@@ -59,8 +62,7 @@ function checarEmail(mail){
 		{return false;}
 }
 </script>
-</body>
-</html>
+
 
 <?php 
 
@@ -94,12 +96,15 @@ if (isset($_POST['nome'])) {
 	));
 	
 	if ($tipo == "call") {
-		echo 'Ihre Daten wurden gesendet.';
+		echo '<div id="div_sucesso">Ihre Daten wurden gesendet.</div>';
 		header('Location: skype:redeindustrial.henrique?call');
 	}else if ($tipo == "chat") {
-		echo 'Ihre Daten wurden gesendet.';
+		echo '<div id="div_sucesso">Ihre Daten wurden gesendet.</div>';
 		header('Location: http://redeindustrial.mysuite.com.br/clientlegume.php?param=hd_chat_gc_cad_chatdep&inf=&sl=rdi&lf=&ca=&cr=&redirect=http://redeindustrial.mysuite.com.br/empresas/rdi/central.php');
 	}
 }
 
 ?>
+</div>
+</body>
+</html>

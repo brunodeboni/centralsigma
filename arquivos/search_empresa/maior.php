@@ -38,7 +38,7 @@ foreach ($resultado as $res) {
 	#titulo {
 		padding: 20px;
 		text-align: center;
-		background-color: #e8490a;
+		background-color: #008B8B;
 		font-weight: bold;
 		color: #FFF;
 		font-size: 18px;
@@ -61,7 +61,7 @@ foreach ($resultado as $res) {
 	}
 	#btn {
 		padding: 5px 30px;
-		background-color: #e8490a;
+		background-color: #008B8B;
 		font-weight: bold;
 		color: #FFF;
 		font-size: 16px;

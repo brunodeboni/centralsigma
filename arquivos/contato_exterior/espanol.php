@@ -5,13 +5,13 @@
 	<title>Contato Exterior</title>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js" type="text/javascript"></script>
-	<link type="text/css" rel="stylesheet" href="default.css">
+	<link href="../default.css" rel="stylesheet">
 </head>
 <body>
-<div id="content">
-	<div id="form-titulo">Contáctenos</div>
+<div id="container">
+	<h1>Contáctenos</h1>
 	<div style="padding-bottom: 10px;">Por favor, complete con sus datos abajo y elija una forma de contactarnos.</div>
-	<div id="div_erro"></div>
+
 	<form id="form_idiomas" action="" method="post">
 		<span>Nombre: </span><br>
 		<input type="text" id="inp_nome" name="nome" class="block"><br>
@@ -32,9 +32,12 @@
 		<input type="radio" name="tipo" value="chat"> Chat
 		<br><br>
 		<input type="hidden" name="atendeu" value="Daniel">
+		
+		<div id="div_erro"></div><br>
+		
 		<button type="button" onclick="verificaDados()">Ir</button>
 	</form>
-</div>
+
 <script>
 function verificaDados() {
 	if ($('#inp_nome').val() == "") {$('#div_erro').show(); $('#div_erro').html('El campo Nombre debe ser llenado.'); return false;}
@@ -58,8 +61,6 @@ function checarEmail(mail){
 		{return false;}
 }
 </script>
-</body>
-</html>
 
 <?php 
 
@@ -93,13 +94,17 @@ if (isset($_POST['nome'])) {
 	));
 	
 	if ($tipo == "call") {
-		echo 'Gracias por enviar!';
+		echo '<div id="div_sucesso">Gracias por enviar!</div>';
 		header('Location: skype:suporterj.sgm?call');
 	}else if ($tipo == "chat") {
-		echo 'Gracias por enviar!';
+		echo '<div id="div_sucesso">Gracias por enviar!</div>';
 		header('Location: http://redeindustrial.mysuite.com.br/clientlegume.php?param=hd_chat_gc_cad_chatdep&inf=&sl=rdi&lf=&ca=&cr=&redirect=http://redeindustrial.mysuite.com.br/empresas/rdi/central.php');
 	}
 	
 }
 
 ?>
+
+</div>
+</body>
+</html>

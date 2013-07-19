@@ -1,6 +1,14 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<div id="count_map"></div>
 <div id="map-canvas" style="border: 1px solid #fff;	width:680px; height: 500px;"></div>
 <script>
+$(document).ready(function() { 
+	 $.post('/arquivos/planejadores/totalmap.php', {}, function(data) {
+	    $('#count_mapa').html('Total de planejadores cadastrados: ' + data);
+	 });
+});
+
 function initialize() {
 	var map = new google.maps.Map(document.getElementById('map-canvas'), {
 		center: new google.maps.LatLng(-14.964268129360427, -46.26117305624996),

@@ -23,8 +23,9 @@ switch($arquivo){
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Formulário de Download do Sigma 2012 - <?php echo $arquivo_nome; ?></title>
-	<link rel="stylesheet" type="text/css" href="default.css">
+	<title>Formulário de Download do SIGMA 2012 - <?php echo $arquivo_nome; ?></title>
+	<link rel="stylesheet" type="text/css" href="../default.css">
+	<link rel="stylesheet" type="text/css" href="base.css">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="http://www.centralsigma.com.br/arquivos/plugins/gioplugin.js"></script>
     <script type="text/javascript" src="http://www.centralsigma.com.br/arquivos/plugins/jquery.maskedinput.js"></script>
@@ -33,8 +34,8 @@ switch($arquivo){
 
 <body>
 
-<div id="content">
-	<div id="h2">Formulário de Download do Sigma 2012 - <?php echo $arquivo_nome; ?></div>
+<div id="container">
+	<h1>Formulário de Download do SIGMA 2012 - <?php echo $arquivo_nome; ?></h1>
     
 	<div class="content">
 		<ul class="menubar">

@@ -1,55 +1,9 @@
 ﻿<!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="utf-8">
+	<meta charset="utf-8">
     <title>Cadastro</title>
-    <style type="text/css">
-	*{font-family: Verdana, sans-serif;padding:0;margin:0;}
-	#content{
-		margin:auto;
-		width:500px;
-		font-size:14px;
-
-	}
-	#h2{
-		margin-bottom:20px;
-		padding:10px;
-		text-transform: uppercase;
-		font-weight: bold;
-		color: #c92c2c;
-		text-align:center;
-		font-size: 16px;
-	}
-	input,select{padding:5px;font-size:16px;border:1px solid #CCC;outline:0;}
-	input:focus,select:focus{background:#FFFFCC;}
-	.block{width:100%;margin:auto;display:block;}
-	button{
-		font-weight: bold;
-		padding:10px 30px;
-		background:#c92c2c; 
-		color: #fff; 
-		border: 0;
-		-webkit-border-radius: 15px; 
-		border-radius: 15px;
-		-webkit-box-shadow: 1px 1px 3px #888;
-		box-shadow: 1px 1px 3px #888;
-	}
-
-	ul.links{list-style:none;font-size:14px;}
-	ul.links li{margin-right:20px;display:inline;}
-
-	.menubar{list-style:none;font-size:16px;float:right;cursor:pointer;width:100px;}
-	.menubar li a{text-decoration:none;padding:1px 5px;display:block;background:#c92c2c;border:1px solid #fff;color:#fff;}
-	.menubar .submenu{list-style:none;position:absolute;display:none;font-size:90%;width:100px;}
-	.menubar .submenu li a{padding:5px;background:#F0F8FF;display:block;}
-	.menubar .submenu li a:hover{background:#006699;color:#FFF;}
-	.menubar li:hover .submenu{display:block;}
-
-
-	.hlinput{border:2px solid #C00;}
-	.hOutput{padding:5px;font-size:16px;border:1px solid #CCC;outline:0;}
-	.clear{clear:both;}
-	</style>
+    <link href="../default.css" rel="stylesheet">
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type="text/javascript" src="http://www.centralsigma.com.br/arquivos/plugins/jquery.maskedinput.js"></script>
 	<script type="text/javascript">		
@@ -311,8 +265,8 @@
 	</script>
 </head>
 <body>
-<div id="content">
-	<div id="h2">Cadastro para o Sigma Web</div>
+<div id="container">
+	<h1>Cadastro para o SIGMA WEB</h1>
 	
 	<form action="processa_cadastro.php" method="post" id="form_processa_contato" onSubmit="return valida_dados(this)">
 	
@@ -378,7 +332,7 @@
 		<span class="sp_email">Email</span>:<br/>
 		<input type="text" name="email" id="inp_email" size="50" class="block campo_obrigatorio" /><br/>
 		
-		<span class="sp_usuario">Usu&aacute;rio</span>:<br/>
+		<span class="sp_usuario">Usuário</span>:<br/>
 		<input type="text" name="usuario" id="inp_usuario" class="block campo_obrigatorio" /><br/>
 		
 		<span class="sp_senha">Senha</span>:<br/>
@@ -387,7 +341,7 @@
 		<span class="sp_senha">Confirmar Senha</span>:<br/>
 		<input type="password" name="confirmacao" id="inp_confirmacao" class="block campo_obrigatorio" /><br/><br/>
 		
-		<span>* Os campos Usuário e Senha serão o seu administrador do SigmaWeb</span><br/><br/>
+		<span>* Os campos Usuário e Senha serão o seu administrador do SIGMA WEB</span><br/><br/>
 		
 		<button type="submit" onclick="return validar_formulario();">Cadastrar</button>
 	</form>
