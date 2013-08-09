@@ -1,0 +1,155 @@
+body{
+	color: #24211D; 
+	font-size: 14px; 
+	font-family:Arial, sans-serif; 
+	background: #FFFAF0;
+}
+
+.ocorrencias{
+	margin:10px auto;
+	padding:5px;
+	width:300px;
+	background: #EEEEEE;
+}
+
+h1{
+	display:block;
+	margin-bottom:5px;
+	text-align:center;
+	padding:10px;
+	font-size:16px;
+	background: #315D81;
+	color:#FFF;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+h2{
+	margin-bottom:5px;
+	text-align:center;
+	padding:5px;
+	font-size:16px;
+	background:#369;
+	color:#FFF;
+}
+
+table{
+	font-size: 14px;
+	margin-bottom:5px;
+	width:100%;
+	border-collapse:collapse;
+	border-bottom:2px solid #315D81;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+table th, table td{
+	padding:10px;
+	text-align:right;
+	font-weight: bold;
+}
+.firstline {
+	background-color: #FAEBD7; 
+	width: 250px;
+}
+.secondline {
+	background-color: #FAF0E6; 
+	width: 250px;
+}
+#tr_resultado td {
+	background-color: #315D81;
+	color: #FFF;
+	font-weight: bold;
+	text-align: center;
+}
+.mostrar {
+	font-weight:bold;
+}
+
+.block{
+	display: block;
+	width: 90%;
+}
+
+#btn {
+	padding: 5px 10px;
+	background:#315D81;
+	color: #FFF;
+	font-weight: bold;
+	text-decoration: none;
+	    	
+	border: 0;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.btn {
+	padding: 5px 10px;
+	background:#315D81;
+	color: #FFF;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 13px;
+	    	
+	border: 0;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#voltar {
+	float: right;	
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+#voltar a {
+	padding:10px 30px;
+	background:#315D81;
+	color: #FFF;
+	font-weight: bold;
+	text-decoration: none;
+	    	
+	border: 0;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#logout {
+	float: right;	
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+#logout a {
+	padding:10px 30px;
+	background:#315D81;
+	color: #FFF;
+	font-weight: bold;
+	text-decoration: none;
+	    	
+	border: 0;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#div_erro {
+	display: none;
+	margin-left: 5px;
+	margin-bottom: 10px;
+	width: 90%;
+	padding: 5px;
+	background: #FEE;
+	color: #900;
+}
+#div_erro2 {
+	margin-left: 5px;
+	margin-bottom: 10px;
+	width: 90%;
+	padding: 5px;
+	background: #FEE;
+	color: #900;
+}
+#div_sucesso {
+	margin-left: 5px;
+	margin-bottom: 10px;
+	width: 90%;
+	padding: 5px;
+	background: #FFFAF0;
+	color: #315D81;
+	font-weight: bold;
+}

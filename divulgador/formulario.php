@@ -6,13 +6,27 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type="text/javascript" src="http://www.centralsigma.com.br/arquivos/plugins/gioplugin.js"></script>
 	<script type="text/javascript" src="http://www.centralsigma.com.br/arquivos/plugins/jquery.maskedinput.js"></script>
-	<link type="text/css" rel="stylesheet" href="default.css">
+	<link type="text/css" rel="stylesheet" href="../arquivos/default.css">
+	<style>
+	#unchecked {
+		font-size: 12px;
+		font-weight: bold;
+		width: 40px;
+		padding:10px 30px;
+		background: #EEE;
+		color: grey;
+		border: 1px solid grey;
+		-webkit-border-radius: 15px; 
+		border-radius: 15px;
+		-webkit-box-shadow: 1px 1px 3px #888;
+		box-shadow: 1px 1px 3px #888;
+	}
+	</style>
 </head>
 <body>
-<div id="content">
-	<div id="form-titulo">Divulgador SIGMA</div>
+<div id="container">
+	<h1>Divulgador SIGMA</h1>
 	
-	<div id="div_erro"></div>
 	<form id="form_divulgador" action="" method="post">
 		
 		<div style="padding-bottom: 10px;">Preencha o cadastro com seus dados:</div>
@@ -92,10 +106,10 @@
 		<input type="checkbox" onchange="allowSubmit(this)" id="inp_aceito" name="aceito" value="sim">
 		<span>Li, aceito e estou de acordo com o <a href="Termo_de_Adesao-Divulgador_SIGMA.pdf" target="_blank">Termo de Adesão ao Programa de Incentivo ao Divulgador SIGMA</a>.</span><br>
 		<br>
+		<div id="div_erro"></div>
 		
-		<div id="btn"><div id="unchecked">Enviar</div></div>
+		<div id="botao"><div id="unchecked">Enviar</div></div>
 	</form>
-</div>
 <script>
 $(document).ready(function() {
 	$(".telefone").telefone();
@@ -153,15 +167,13 @@ function checarCpf(cpf) {
 
 function allowSubmit(inp) {
 	if (inp.checked) {
-		$('#btn').html('<button type="button" onclick="checarCpf($(\'#inp_cpf\').val())">Enviar</button>');
+		$('#botao').html('<button type="button" onclick="checarCpf($(\'#inp_cpf\').val())">Enviar</button>');
 	}else {
-		$('#btn').html('<div id="unchecked">Enviar</div>');
+		$('#botao').html('<div id="unchecked">Enviar</div>');
 	}
 }
 
 </script>
-</body>
-</html>
 
 <?php
 
@@ -275,7 +287,7 @@ if (isset($_POST['nome'])) {
 		$codigo = $db->lastInsertId('codigo');
 		
 		if (! $success) {
-			echo '<div id="form-titulo">Erro ao processar seu cadastro. Por favor, atualize a página e tente novamente!</div>';
+			echo '<div class="div_erro2">Erro ao processar seu cadastro. Por favor, atualize a página e tente novamente!</div>';
 		
 		}else {
 		
@@ -329,7 +341,7 @@ Setor Comercial SIGMA
 			
 		 	$email_enviado = mail($destinatario, $assunto, $mensagem, $headers);
 		 	
-		 	echo '<div id="form-titulo">
+		 	echo '<div id="div_sucesso">
 		 	Cadastro efetuado com sucesso!<br>
 		 	Seu código é <b>'.$codigo.'</b><br>
 		 	<span style="font-size: 12px;">Atenção: Este código será o seu identificador e também o seu login.</span>
@@ -339,3 +351,6 @@ Setor Comercial SIGMA
 }
 
 ?>
+</div>
+</body>
+</html>

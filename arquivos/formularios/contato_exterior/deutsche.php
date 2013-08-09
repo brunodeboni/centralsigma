@@ -5,48 +5,50 @@
 	<title>Contato Exterior</title>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js" type="text/javascript"></script>
-	<link href="../default.css" rel="stylesheet">
-	
+	<link href="../../default.css" rel="stylesheet">
 </head>
 <body>
 <div id="container">
-	<h1>Contact us</h1>
-	<div style="padding-bottom: 10px;">Please fill in your information below and choose how to contact us.</div>
-	<div id="div_erro"></div>
+	<h1>Kontaktieren Sie uns</h1>
+	<div style="padding-bottom: 10px;">Bitte geben Sie Ihre Daten ein und wählen Sie, wie Sie uns zu kontaktieren.</div>
+	
 	<form id="form_idiomas" action="" method="post">
 		<span>Name: </span><br>
 		<input type="text" id="inp_nome" name="nome" class="block"><br>
-		<span>Company: </span><br>
+		<span>Unternehmen: </span><br>
 		<input type="text" id="inp_empresa" name="empresa" class="block"><br>
-		<span>Occupation: </span><br>
+		<span>Arbeit: </span><br>
 		<input type="text" id="inp_cargo" name="cargo" class="block"><br>
-		<span>Telephone Number: </span><br>
+		<span>Telefon: </span><br>
 		<input type="text" id="inp_telefone" name="telefone" class="block"><br>
 		<span>E-mail: </span><br>
 		<input type="text" id="inp_email" name="email" class="block"><br>
-		<span>City: </span><br>
+		<span>Stadt: </span><br>
 		<input type="text" id="inp_cidade" name="cidade" class="block"><br>
-		<span>Country: </span><br>
+		<span>Land: </span><br>
 		<input type="text" id="inp_pais" name="pais" class="block"><br>
 		<br>
-		<input type="radio" name="tipo" value="call" checked> Call with Skype &nbsp;&nbsp;&nbsp;
+		<input type="radio" name="tipo" value="call" checked> Rufen Sie mit Skype &nbsp;&nbsp;&nbsp;
 		<input type="radio" name="tipo" value="chat"> Chat
 		<br><br>
-		<input type="hidden" name="atendeu" value="Josias">
-		<button type="button" onclick="verificaDados()">Go</button>
+		<input type="hidden" name="atendeu" value="Henrique">
+		
+		<div id="div_erro"></div><br>
+		
+		<button type="button" onclick="verificaDados()">Gehen</button>
 	</form>
 
 <script>
 
 function verificaDados() {
-	if ($('#inp_nome').val() == "") {$('#div_erro').show(); $('#div_erro').html('Please inform your Name.'); return false;}
-	if ($('#inp_empresa').val() == "") {$('#div_erro').show(); $('#div_erro').html('Please inform your Company.'); return false;}
-	if ($('#inp_cargo').val() == "") {$('#div_erro').show(); $('#div_erro').html('Please inform your Occupation.'); return false;}
-	if ($('#inp_telefone').val() == "") {$('#div_erro').show(); $('#div_erro').html('Please inform your Phone Number.'); return false;}
-	if ($('#inp_email').val() == "") {$('#div_erro').show(); $('#div_erro').html('Please inform your E-mail.'); return false;}
-	if ($('#inp_cidade').val() == "") {$('#div_erro').show(); $('#div_erro').html('Please inform your City.'); return false;}
-	if ($('#inp_pais').val() == "") {$('#div_erro').show(); $('#div_erro').html('Please inform your Country.'); return false;}
-	if(!checarEmail($('#inp_email').val())) {$('#div_erro').show(); $('#div_erro').html('Please inform a valid E-mail.'); return false;}
+	if ($('#inp_nome').val() == "") {$('#div_erro').show(); $('#div_erro').html('Das Feld Name sollte gefüllt werden.'); return false;}
+	if ($('#inp_empresa').val() == "") {$('#div_erro').show(); $('#div_erro').html('Das Unternehmen Feld muss ausgefüllt werden.'); return false;}
+	if ($('#inp_cargo').val() == "") {$('#div_erro').show(); $('#div_erro').html('Die Feldarbeit abgeschlossen sein sollte.'); return false;}
+	if ($('#inp_telefone').val() == "") {$('#div_erro').show(); $('#div_erro').html('Die Telefon Feld muss ausgefüllt werden.'); return false;}
+	if ($('#inp_email').val() == "") {$('#div_erro').show(); $('#div_erro').html('Die E-Mail-Feld muss ausgefüllt werden.'); return false;}
+	if ($('#inp_cidade').val() == "") {$('#div_erro').show(); $('#div_erro').html('Die Stadt Feld muss ausgefüllt werden.'); return false;}
+	if ($('#inp_pais').val() == "") {$('#div_erro').show(); $('#div_erro').html('Das Land-Feld muss ausgefüllt werden.'); return false;}
+	if(!checarEmail($('#inp_email').val())) {$('#div_erro').show(); $('#div_erro').html('Die E-Mail-Feld muss korrekt ausgefüllt werden.'); return false;}
 	
 	$("#form_idiomas").submit();
 }
@@ -61,10 +63,11 @@ function checarEmail(mail){
 }
 </script>
 
+
 <?php 
 
 // Conexão com mysql
-require '../../conexoes.inc.php';
+require '../../../conexoes.inc.php';
 $db = Database::instance('centralsigma02');
 	
 if (isset($_POST['nome'])) {
@@ -93,16 +96,15 @@ if (isset($_POST['nome'])) {
 	));
 	
 	if ($tipo == "call") {
-		echo '<div id="div_sucesso">Thank you for submitting.</div>';
-		header('Location: skype:redeindustrial.josias?call');
+		echo '<div id="div_sucesso">Ihre Daten wurden gesendet.</div>';
+		header('Location: skype:redeindustrial.henrique?call');
 	}else if ($tipo == "chat") {
-		echo '<div id="div_sucesso">Thank you for submitting.</div>';
+		echo '<div id="div_sucesso">Ihre Daten wurden gesendet.</div>';
 		header('Location: http://redeindustrial.mysuite.com.br/clientlegume.php?param=hd_chat_gc_cad_chatdep&inf=&sl=rdi&lf=&ca=&cr=&redirect=http://redeindustrial.mysuite.com.br/empresas/rdi/central.php');
 	}
 }
 
 ?>
-
 </div>
 </body>
 </html>

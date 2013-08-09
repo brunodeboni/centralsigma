@@ -108,9 +108,9 @@ foreach ($resultado as $res) {
 			case 3: echo "<td>Sigma 2012 Enterprise</td>"; break;
 		}
 		
-		echo "<td><input class=\"obs aj\" id=\"$res[cod]\" type=\"text\" value=\"$res[obs]\"></td>";
-		echo "<td><input class=\"agenda aj\" id=\"$res[cod]\" type=\"text\" value=\"$res[agenda]\"></td>";
-		echo "<td><input class=\"responsavel aj\" id=\"$res[cod]\" type=\"text\" value=\"$res[responsavel]\"></td>";
+		echo "<td><input type=\"text\" class=\"obs aj\" id=\"$res[cod]\"  value=\"$res[obs]\"></td>";
+		echo "<td><input type=\"text\" class=\"agenda aj\" id=\"$res[cod]\"  value=\"$res[agenda]\"></td>";
+		echo "<td><input type=\"text\" class=\"responsavel aj\" id=\"$res[cod]\"  value=\"$res[responsavel]\"></td>";
 	echo "</tr>";
 }
 

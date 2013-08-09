@@ -157,8 +157,6 @@ comercial@redeindustrial.com.br";
 	
 		return $novo_telefone;
 	}
-	
-mysql_close($conn);
 
 ?>
 <!doctype html>

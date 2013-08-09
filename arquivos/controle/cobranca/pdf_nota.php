@@ -1,6 +1,10 @@
 <?php
 require '../fpdf/fpdf_plus.php';
 
+//Banco de dados
+include '../../../conexoes.inc.php';
+$pdo_controle = Database::instance('controle');
+
 if (isset ($_GET['cnpj'])) {
 	$cnpj_cliente = $_GET['cnpj'];
 	$where = "where cli.cnpj = :cnpj_cliente";
@@ -15,7 +19,7 @@ if (isset ($_GET['cnpj'])) {
 	$sql = "select n.id, n.vencimento, cob.data_liquidacao 
 			from cob_nota_fiscal as n
 			left join cob_conta_cobranca as cob on cob.id_nota_fiscal = n.id";
-	$query = $db->prepare($sql);
+	$query = $pdo_controle->prepare($sql);
 	$query->execute();
 	$resultado = $query->fetchAll();
 
@@ -116,7 +120,7 @@ if (isset ($_GET['cnpj'])) {
 			from cob_nota_fiscal as n
 			left join cob_clientes as cli on cli.id = n.id_cliente 
 			left join cob_conta_cobranca as cobr on cobr.id_nota_fiscal = n.id";
-	$query = $db->prepare($sql);
+	$query = $pdo_controle->prepare($sql);
 	$query->execute();
 	$resultado = $query->fetchAll();
 
@@ -189,9 +193,6 @@ if (isset ($_GET['cnpj'])) {
 
 header('Content-Type: text/html; charset=utf-8');
 
-//Banco de dados
-include '../../../conexoes.inc.php';
-$pdo_controle = Database::instance('controle');
 
 //Abre o PDF
 $pdf = new PDF('P', 'mm', 'A4'); //formato retrato, medida mm, tamanho A4

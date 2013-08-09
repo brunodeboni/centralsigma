@@ -5,6 +5,10 @@
 	font-size: 14px;
 }
 
+body {
+	background: #ACD0E7;
+}
+
 #container {
 	width: 600px;
 	margin: 0 auto;
@@ -33,7 +37,7 @@ input:focus, select:focus {
 	display:block;
 }
 
-button {
+button, #btn {
 	font-weight: bold;
 	padding:10px 30px;
 	background:#008B8B; 

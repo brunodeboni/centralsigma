@@ -8,28 +8,46 @@ $_SESSION = array(); // Clears the $_SESSION variable
 	<meta charset="utf-8">
 	<title>Painel de Ocorrências</title>
 	<style>
-	*{      
-		font-family:Tahoma, Geneva, sans-serif;
-		padding:0;
-		margin:0;
-		font-size:12px;
+	body{      
+		color: #24211D; 
+	    font-size: 14px; 
+	    font-family:Arial, sans-serif; 
+	    background: #FFFAF0;
 	}
 	#container {
 		width: 300px;
-		margin: auto;
-	}
-	#form {
-		font-weight:bold;
-		font-size:12px;
+		margin:10px auto;
+		padding:10px;
+		background: #EEEEEE;
+		font-weight: bold;
 	}
 	.block {
 		width:100%;
 		margin:auto;
 		display:block;
+		background: #FFF;
+	}
+	h1{
+		display:block;
+		margin-bottom:5px;
+		text-align:center;
+		padding:10px;
+		font-size:16px;
+		background: #315D81;
+		color:#FFF;
+		-webkit-border-radius: 5px;
+	    border-radius: 5px;
 	}
 	button {
-		padding:10px 70px;
-		background:#DDF;
+		padding:10px 30px;
+	    background:#315D81;
+	    color: #FFF;
+	    font-weight: bold;
+	    text-decoration: none;
+	    	
+	    border: 0;
+	    -webkit-border-radius: 5px;
+	    border-radius: 5px;
 	}
 	.clear {
 		clear:both;
@@ -44,6 +62,7 @@ $_SESSION = array(); // Clears the $_SESSION variable
 </head>
 <body>
 <div id="container">
+	<h1>Painel de Controle de Ocorrências</h1>
 	<div id="form">
 		<br class="clear">
 		<form action="" method="post" id="form_login" enctype="multipart/form-data" >

@@ -1,0 +1,31 @@
+
+h1 {
+	color: #19426E;
+}
+
+#btn {
+	background: #19426E;
+}
+
+input, select {
+    padding:3px;
+}
+.descricao {
+	font-style: italic;
+	font-size: 12px;
+}
+
+#download {
+	padding: 10px 30px;
+	text-decoration: none;
+	background: #F48000;
+	color: #FFF;
+	font-weight: bold;
+	-webkit-border-radius: 15px;
+}
+
+#qrcode {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 200px;
+}

@@ -68,6 +68,7 @@ if(!isset($_SESSION['5468usuario'])) die("<strong>Acesso Negado!</strong>");
 				<tr class="secondline"><td><a href="empresas/cadastrar.php">Empresas por Segmento</a></td></tr>
 				<tr class="firstline"><td><a href="perfil/index.php">Perfil CPCM/Planejadores de Manutenção SIGMA</a></td></tr>
 				<tr class="secondline"><td><a href="news/index.php">Controle de Notícias</a></td></tr>
+				<tr class="firstline"><td><a href="sites-fora-do-ar/index.php">Verifica sites no ar</a></td></tr>
 		</table>
 		<br>
 		<?php if ($_SESSION['6542role'] == '2') {?>

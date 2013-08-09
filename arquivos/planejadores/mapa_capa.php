@@ -1,6 +1,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<div id="count_map"></div>
+<div id="count_mapa" style="font-family: Arial, sans-serif; font-size: 12px;"></div>
+<br>
 <div id="map-canvas" style="border: 1px solid #fff;	width:680px; height: 500px;"></div>
 <script>
 $(document).ready(function() { 

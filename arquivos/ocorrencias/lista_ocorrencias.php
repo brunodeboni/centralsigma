@@ -8,11 +8,16 @@ if(!isset($_SESSION['usuario'])) die("<strong>Acesso Negado!</strong>");
 <html>
 <head>
     <meta charset="utf-8" />
-	<title>Painel de Indicações SIGMA</title>
+	<title>Lista de Ocorrências</title>
 	<style>
-	body{font-size:14px; font-family: Arial, Helvetica, sans-serif;}
-	.firstline {background-color: #0277BE; width: 250px;}
-	.secondline {background-color: #A6D0E7; width: 250px;}
+	body{
+		color: #24211D; 
+	    font-size: 14px; 
+	    font-family:Arial, sans-serif; 
+	    background: #FFFAF0;
+	}
+	.firstline {background-color: #FAEBD7; width: 250px;}
+	.secondline {background-color: #FAF0E6; width: 250px;}
 	.mostrar {font-weight:bold;}
 	.ocorrencias{
 		margin:10px auto;
@@ -21,12 +26,15 @@ if(!isset($_SESSION['usuario'])) die("<strong>Acesso Negado!</strong>");
 		background: #EEEEEE;
 	}
 	h1{
+		display:block;
 		margin-bottom:5px;
 		text-align:center;
-		padding:5px;
+		padding:10px;
 		font-size:16px;
 		background: #315D81;
 		color:#FFF;
+		-webkit-border-radius: 5px;
+	    border-radius: 5px;
 	}
 	h2{
 		margin-bottom:5px;
@@ -42,6 +50,8 @@ if(!isset($_SESSION['usuario'])) die("<strong>Acesso Negado!</strong>");
 		width:100%;
 		border-collapse:collapse;
 		border-bottom:2px solid #315D81;
+		-webkit-border-radius: 5px;
+	    border-radius: 5px;
 	}
 	table th, table td{
 		padding:10px;
@@ -49,16 +59,26 @@ if(!isset($_SESSION['usuario'])) die("<strong>Acesso Negado!</strong>");
 		font-weight: bold;
 	}
 	#logout {
-		float: right;
-		font-weight: bold;	
-		margin-top: -5px;
+		float: right;	
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+	#logout a {
+		padding:10px 30px;
+	    background:#315D81;
+	    color: #FFF;
+	    font-weight: bold;
+	    text-decoration: none;
+	    	
+	    border: 0;
+	    -webkit-border-radius: 5px;
+	    border-radius: 5px;
 	}
 	</style>
 </head>
 <body>
 <div class="ocorrencias">
-	<div id="logout"><a href="index.php">Sair</a></div>
-	<h1>Painel de Registros de Ocorrência</h1>
+	<h1>Lista de Ocorrências</h1>
 	<table>
 		<tr class="firstline">
 			<td>Código</td>
@@ -67,7 +87,7 @@ if(!isset($_SESSION['usuario'])) die("<strong>Acesso Negado!</strong>");
 <?php 
 
 //Conexão com mysql
-require '../../../conexoes.inc.php';
+require '../../conexoes.inc.php';
 $db = Database::instance('centralsigma02');
 
 $sql = "select codigo, date_format(dh_registro, '%d/%m/%Y %h:%m') as dh_registro from bo_ocorrencias order by codigo desc";
@@ -93,7 +113,10 @@ foreach ($resultado as $res) {
 
 ?>
 	</table>
-
+	<div id="logout">
+		<a href="painel.php">Voltar</a>
+		<a href="index.php">Sair</a>
+	</div>
 </div>
 </body>
 </html>

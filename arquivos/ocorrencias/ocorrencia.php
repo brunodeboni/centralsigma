@@ -11,65 +11,32 @@ if (isset ($_GET['codigo'])) {
 <html>
 <head>
     <meta charset="utf-8" />
-	<title>Painel de Indicações SIGMA</title>
+	<title>Painel de Ocorrências</title>
+	<link rel="stylesheet" href="default.css">
 	<style>
-	body{font-size:14px; font-family: Arial, Helvetica, sans-serif;}
-	.firstline {background-color: #0277BE; width: 250px;}
-	.secondline {background-color: #A6D0E7; width: 250px;}
-	.mostrar {font-weight:bold;}
 	.ocorrencias{
-		margin:10px auto;
-		padding:5px;
 		width:700px;
-		background: #EEEEEE;
-	}
-	h1{
-		margin-bottom:5px;
-		text-align:center;
-		padding:5px;
-		font-size:16px;
-		background: #315D81;
-		
-		color:#FFF;
-	}
-	h2{
-		margin-bottom:5px;
-		text-align:center;
-		padding:5px;
-		font-size:16px;
-		background:#369;
-		color:#FFF;
-	}
-	table{
-		font-size: 14px;
-		margin-bottom:5px;
-		width:100%;
-		border-collapse:collapse;
-		border-bottom:2px solid #315D81;
-	}
-	table th, table td{
-		padding:10px;
-		text-align:right;
-		font-weight: bold;
-	}
-	#voltar {
-		float: right;
-		font-weight: bold;	
-		margin-top: -5px;
 	}
 	</style>
 </head>
 <body>
 <div class="ocorrencias">
-	<div id="voltar"><a href="painel.php">Voltar</a></div>
 	<h1>Painel de Registros de Ocorrência</h1>
 <?php 
 
 //Conexão com mysql
-require '../../../conexoes.inc.php';
+require '../../conexoes.inc.php';
 $db = Database::instance('centralsigma02');
 
-$sql = "select codigo, date_format(dh_registro, '%d/%m/%Y %h:%m') as dh_registro, responsavel, dia_ocorrencia, hora_ocorrencia, colaboradores, assunto, ocorrencia, erro, sugestao, problemas, clientes, envolvido, ciencia_cliente from bo_ocorrencias where codigo = :codigo";
+$sql = "select o.codigo, date_format(o.dh_registro, '%d/%m/%Y %h:%m') as dh_registro, 
+o.responsavel, o.dia_ocorrencia, o.hora_ocorrencia, o.colaboradores, o.assunto, 
+o.ocorrencia, e.erro, o.erros_descricao, o.sugestao, p.problema, o.problemas_descricao, 
+o.clientes, o.envolvido, o.ciencia_cliente, o.status
+from bo_ocorrencias as o 
+left join bo_ocorrencias_erros as e on e.id = o.erros
+left join bo_ocorrencias_problemas as p on p.id = o.problemas
+where o.codigo = :codigo";
+ 
 $query = $db->prepare($sql);
 $query->execute(array(':codigo' => $codigo));
 $resultado = $query->fetchAll();
@@ -83,11 +50,33 @@ foreach ($resultado as $res) {
 	$assunto = $res['assunto'];
 	$ocorrencia = $res['ocorrencia'];
 	$erro = $res['erro'];
+	$erros_descricao = $res['erros_descricao'];
 	$sugestao = $res['sugestao'];
-	$problemas = $res['problemas'];
+	$problema = $res['problema'];
+	$problemas_descricao = $res['problemas_descricao'];
 	$clientes = $res['clientes'];
 	$envolvido = $res['envolvido'];
 	$ciencia_cliente = $res['ciencia_cliente'];
+	$status = $res['status'];	
+	
+	if ($status == '1') {
+		$sql = "select solucao, date, responsavel_solucao 
+		from bo_solucao where cod_ocorrencia = :codigo";
+		$query = $db->prepare($sql);
+		$query->bindValue(':codigo', $codigo, PDO::PARAM_INT);
+		$query->execute();
+		$resultado = $query->fetchAll();
+		
+		foreach ($resultado as $res) {
+			$solucao = $res['solucao']; 
+			$date = $res['date'];
+			$responsavel_solucao = $res['responsavel_solucao']; 
+		}
+	}else {
+		$solucao = 'Pendente'; 
+		$date = 'Pendente';
+		$responsavel_solucao = 'Pendente'; 
+	}
 	
 	echo '
 	<table>
@@ -123,13 +112,21 @@ foreach ($resultado as $res) {
 			<td>O que está errado/fora do padrão</td>
 			<td>'.$erro.'</td>
 		</tr>
+		<tr class="secondline">
+			<td>Descrição do erro</td>
+			<td>'.$erros_descricao.'</td>
+		</tr>
 		<tr class="firstline">
 			<td>Como deveria ser</td>
 			<td>'.$sugestao.'</td>
 		</tr>
 		<tr class="secondline">
 			<td>Quais problemas este erro gerou</td>
-			<td>'.$problemas.'</td>
+			<td>'.$problema.'</td>
+		</tr>
+		<tr class="secondline">
+			<td>Descrição dos problemas</td>
+			<td>'.$problemas_descricao.'</td>
 		</tr>
 		<tr class="firstline">
 			<td>Esta ocorrência está relacionada a algum cliente?</td>
@@ -143,11 +140,24 @@ foreach ($resultado as $res) {
 			<td>Esta ocorrência chegou ao conhecimetno do cliente? Explique.</td>
 			<td>'.$ciencia_cliente.'</td>
 		</tr>
+		<tr class="secondline">
+			<td>Solução</td>
+			<td>'.$solucao.'</td>
+		</tr>
+		<tr class="firstline">
+			<td>Data da solução</td>
+			<td>'.$date.'</td>
+		</tr>
+		<tr class="secondline">
+			<td>Responsável pela solução</td>
+			<td>'.$responsavel_solucao.'</td>
+		</tr>
+		 
 	</table>';
 }
 
 ?>
-
+	<div id="voltar"><a href="painel.php">Voltar</a></div>
 </div>
 </body>
 </html>

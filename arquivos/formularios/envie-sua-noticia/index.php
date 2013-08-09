@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<title>Envie sua Notícia</title>
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	<link href="../default.css" rel="stylesheet">
+	<link href="../../default.css" rel="stylesheet">
 </head>
 <body>
 <div id="container">
@@ -112,7 +112,7 @@ if (isset ($_POST['nome'])) {
 	
 	
 	//Conexão banco de dados
-	require '../../conexoes.inc.php';
+	require '../../../conexoes.inc.php';
 	$db = Database::instance('centralsigma02');
 	
 	$sql = "insert into news_enviadas 
