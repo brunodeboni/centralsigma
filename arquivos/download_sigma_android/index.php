@@ -78,7 +78,19 @@
 				
 				<span>E-mail:</span>
 				<input type="text" id="email" name="email" class="block" required><br>
+				
+				<span>Usuário:</span> <span class="descricao">Será o usuário administrador da conta da empresa. Não deve conter sinais, acentos, cedilha ou espaços.</span>
+				<input type="text" id="usuario" name="usuario" class="block"><br>
 					
+				<span>Senha:</span>
+				<input type="password" id="senha" name="senha" class="block"><br>
+					
+				<span>Confirme a senha:</span>
+				<input type="password" id="confirma" name="confirma" class="block"><br>
+					
+				<span>Subdomínio para acesso ao aplicativo: </span> <span class="descricao">Não deve conter sinais, acentos, cedilha, maiúsculas ou espaços.</span><br>
+				<input type="text" id="subdominio" name="subdominio" placeholder="nomedaempresa">.mobileprovider.com.br<br>
+				
 				<br>
 				<div id="div_erro"></div>
 					
@@ -93,6 +105,24 @@ $(document).ready(function() {
 	$('#telefone').mask('(99) 9999-9999?9');
 	$('#celular').mask('(99) 9999-9999?9');
 	$('#nro').mask('?99999999');
+	$('#usuario').keyup(function() {
+		var newval = valid($(this).val(), 'special');
+		$(this).val(newval);
+	});
+	$('#usuario').blur(function() {
+		var newval = valid($(this).val(), 'special');
+		$(this).val(newval);
+	});
+	$('#subdominio').keyup(function() {
+		var newval = valid($(this).val(), 'special');
+		var novoval = newval.toLowerCase();
+		$(this).val(novoval);
+	});
+	$('#subdominio').blur(function() {
+		var newval = valid($(this).val(), 'special');
+		var novoval = newval.toLowerCase();
+		$(this).val(novoval);
+	});
 });
 
 //Subsitui caracteres especiais
@@ -114,6 +144,14 @@ $('#btn').click(function() {
 	if ($('#telefone').val() == "") {$('#div_erro').show(); $('#div_erro').html('Por favor, informe o telefone da Empresa.'); return false;}
 	if ($('#celular').val() == "") {$('#div_erro').show(); $('#div_erro').html('Por favor, informe um número de celular.'); return false;}
 	if ($('#email').val() == "" || !checarEmail($('#email').val())) {$('#div_erro').show(); $('#div_erro').html('Por favor, informe um endereço de e-mail para contato.'); return false;}
+
+	if ($('#usuario').val() == "") {$('#erro').show(); $('#erro').html('Por favor, crie um usuário administrador.'); return false;}
+	if ($('#senha').val() == "") {$('#erro').show(); $('#erro').html('Por favor, crie uma senha.'); return false;}
+	if ($('#confirma').val() == "") {$('#erro').show(); $('#erro').html('Por favor, repita a senha.'); return false;}
+
+	if ($('#senha').val() != $('#confirma').val()) {$('#erro').show(); $('#erro').html('As duas senhas cadastradas não conferem.'); return false;}
+	
+	if ($('#subdominio').val() == "") {$('#erro').show(); $('#erro').html('Por favor, crie um subdomínio para acesso do aplicativo por usa Empresa.'); return false;}
 	
 	$('#cadastro_empresa').submit();
 });
@@ -189,12 +227,24 @@ if (isset ($_POST['empresa'])) {
 	
 	$endereco = $_POST['logradouro'].", ".$_POST['nro'];
 	
+	$usuario = preg_replace('/[^a-z0-9]/i', '', $_POST['usuario']);
+	
+	if ($_POST['senha'] == $_POST['confirma']) {
+		$senha = md5($_POST['senha']);
+	}else {
+		echo '<div id="erro2">Suas senhas não conferem.</div>';
+		exit();
+	}
+	
+	$subdominio = strtolower($_POST['subdominio']);
+	$subdominio = preg_replace('/[^a-z0-9]/i', '', $subdominio);
+	
 	require '../../conexoes.inc.php';
 	$db = Database::instance('mobile_provider');
 	
     $sql = "insert into cadastro 
-    	(empresa, cnpj, endereco, complemento, cidade, uf, telefone, celular, email, status) 
-    	values (:empresa, :cnpj, :endereco, :complemento, :cidade, :uf, :telefone, :celular, :email, 0)";
+    	(empresa, cnpj, endereco, complemento, cidade, uf, telefone, celular, email, usuario, senha, subdominio, status) 
+    	values (:empresa, :cnpj, :endereco, :complemento, :cidade, :uf, :telefone, :celular, :email, :usuario, :senha, :subdominio, 0)";
     $query = $db->prepare($sql);
     $success = $query->execute(array(
     	':empresa' => $_POST['empresa'],
@@ -205,12 +255,17 @@ if (isset ($_POST['empresa'])) {
     	':uf' => $_POST['uf'],
     	':telefone' => $_POST['telefone'],
     	':celular' => $_POST['celular'],
-   		':email' => $_POST['email']
+   		':email' => $_POST['email'],
+    	':usuario' => $usuario,
+    	':senha' => $senha,
+    	':subdominio' => $subdominio
     ));
     
     if ($success) {
     	//header('skymobile.apk');
+    	echo '<br><p>Cadastro aguardando aprovação. Você receberá um e-mail de confirmação em até 1 dia útil.</p>';
     	echo '<br><br><a id="download" href="sigmaandroid.apk" mimetype="application/vnd.android.package-archive" download>Baixe o app</a>';
+    	
     	
     	//Envia e-mail para Abrahão, Henrique, Carolina...
 		$headers = 'MIME-Version: 1.0'."\r\n";
