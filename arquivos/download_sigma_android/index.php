@@ -16,8 +16,8 @@
 			<form id="cadastro_empresa" action="" method="post">
 				<h1>Download SIGMA ANDROID</h1>
 				
-				<p>Se preferir, você pode acessar esta página diretamente do seu smartphone ou tablet através do QR Code abaixo, para realizar o download no próprio aparelho.</p>
-				<img src="1375809838.png" id="qrcode">
+				<p>Se preferir, baixe e instale o aplicativo SIGMA Android diretamente pela Play Store, através do QR Code abaixo:</p>
+				<img src="qrcodeplaystore.png" id="qrcode" width="200">
 				<br>
 				
 				<span>Empresa:</span>
@@ -146,6 +146,7 @@ $('#btn').click(function() {
 	if ($('#email').val() == "" || !checarEmail($('#email').val())) {$('#div_erro').show(); $('#div_erro').html('Por favor, informe um endereço de e-mail para contato.'); return false;}
 
 	if ($('#usuario').val() == "") {$('#erro').show(); $('#erro').html('Por favor, crie um usuário administrador.'); return false;}
+	if (! validarUsuario($('#usuario').val())) {$('#erro').show(); $('#erro').html('Este usuário já existe.'); return false;}
 	if ($('#senha').val() == "") {$('#erro').show(); $('#erro').html('Por favor, crie uma senha.'); return false;}
 	if ($('#confirma').val() == "") {$('#erro').show(); $('#erro').html('Por favor, repita a senha.'); return false;}
 
@@ -217,6 +218,13 @@ function validarCNPJ(cnpj) {
            
     return true;
     
+}
+
+function validarUsuario(usuario) {
+	$.post('ajax_usuario.php', {usuario: usuario}, function(data) {
+		if (data == 'true') return true;
+		else return false;
+	});
 }
 
 </script>

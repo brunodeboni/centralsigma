@@ -337,7 +337,7 @@ if (isset ($_POST['dh_registro'])) {
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 	$headers .= 'From: qualidade@redeindustrial.com.br '. "\r\n";
-	$headers .= 'CC: ';
+	$headers .= 'CC: <abrahaolslima@gmail.com>, ';
 	foreach ($col_email as $email) {
 		$headers .= $email.', ';
 	}

@@ -152,7 +152,6 @@ function visit($url) {
 	curl_close($ch);
 	
 	switch($httpcode) {
-		case 0: return '0: Site não existe.'; break;
 		case 304: return '304 Não modificado: A página solicitada não foi modificada desde a última solicitação.'; break;
 		case 400: return '400 Solicitação inválida: O servidor não entendeu a sintaxe da solicitação.'; break;
         case 403: return '403 Proibido: O servidor está recusando a solicitação.'; break;

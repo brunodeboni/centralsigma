@@ -46,7 +46,7 @@ $(document).ready(function() {
 	 $.post('/arquivos/planejadores/totalmap.php', {}, function(data) {
 	    $('#count_mapa').html('Total de planejadores cadastrados: ' + data);
 	 });
-})
+});
 
 function initialize() {
 	var map = new google.maps.Map(document.getElementById('map-canvas'), {

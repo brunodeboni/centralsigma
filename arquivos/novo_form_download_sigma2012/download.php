@@ -80,7 +80,9 @@ error_reporting(0);
 	$msg = "
 Caro(a) Sr.(a),
 
-Localizamos em nosso sistema seu cadastro em função da realização do download do SIGMA - Sistema de Gerenciamento de Manutenção.
+Você fez download do software de manutenção mais popular e mais completo do Brasil!
+
+Aproveite e baixe também a versão do SIGMA para TABLETs e Smartphones. Desta forma você poderá utilizar o SIGMA na palma da mão e em qualquer lugar. Conheça a versão 1.0 e as demais versões, concorrendo ainda a sorteio de diversos TABLETs.
   
 A Rede Industrial, fundada em 1987, coloca a sua disposição, todos os seus colaboradores para lhe auxiliar no que for necessário para a sua melhor utilização do SIGMA que é o software de manutenção mais popular do Brasil, que atualmente atingiu a marca de 310 mil downloads.
 
@@ -103,6 +105,7 @@ Esperamos que sua experiência com o SIGMA seja ótima e garanta bons resultados
 
 Ao baixar o SIGMA, você tem direito a solicitar um curso gratuito de PCM - Planejamento e controle da Manutenção. Basta solicitar através de nosso site http://www.centralsigma.com.br
 
+Não esqueça, leve o SIGMA na palma da mão! Use a versão SIGMA ANDROID.
 
 Atenciosamente,
 
