@@ -77,5 +77,14 @@ if ($_POST['classe'] == 'obs') {
 	}
 	
 }
-
+/*
+$sql2 = "select id from downloads_contato where obs = '' and agenda = '' and responsavel = ''";
+$query2 = $db_02->query($slq2);
+$res = $query2->fetch();
+if ($query2->rowCount() > 0) {
+	$sql3 = "delete from downloads_contato where id = :id";
+	$query3 = $db_02->prepare($sql3);
+	$query3->execute(array(':id' => $res['id']));
+}
+*/
 ?>

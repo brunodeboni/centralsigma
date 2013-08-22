@@ -60,7 +60,7 @@ if(!isset($_SESSION['5468usuario'])) die("<strong>Acesso Negado!</strong>");
 	<div>
 		<h1>Controle de estat&iacute;sticas</h1>
 		<table>
-				<tr class="firstline"><td><a href="downloads/query_downloads.php">Estatísticas do SIGMA</a></td></tr>
+				<tr class="firstline"><td><a href="downloads/index.php">Estatísticas do SIGMA</a></td></tr>
 				<tr class="secondline"><td><a href="cursos/controle_turmas.php">Controle do Curos Web</a></td></tr>
 				<tr class="firstline"><td><a href="cursos/controle_turmas_aulasweb.php">Controle do Aulasweb</a></td></tr>
 				<tr class="secondline"><td><a href="sms/sms.php">SMS's enviados</a></td></tr>

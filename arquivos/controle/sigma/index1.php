@@ -108,11 +108,14 @@ foreach ($resultado as $res) {
 			case 3: echo "<td>Sigma 2012 Enterprise</td>"; break;
 		}
 		
-		
+		/*
 		echo "<td><input type=\"text\" class=\"obs aj\" id=\"$res[cod]\"  value=\"$res[obs]\"></td>";
 		echo "<td><input type=\"text\" class=\"agenda aj\" id=\"$res[cod]\"  value=\"$res[agenda]\"></td>";
 		echo "<td><input type=\"text\" class=\"responsavel aj\" id=\"$res[cod]\"  value=\"$res[responsavel]\"></td>";
-		
+		*/
+		echo '<td class="tede obs" id="'.$res["cod"].'"><span>'.$res["obs"].'</span></td>
+			<td class="tede agenda" id="'.$res["cod"].'"><span>'.$res["agenda"].'</span</td>
+			<td class="tede responsavel" id="'.$res["cod"].'"><span>'.$res["responsavel"].'</span></td>';
 	echo "</tr>";
 }
 
@@ -124,6 +127,21 @@ $(document).ready(function() {
 	$('.agenda').mask('99/99/9999');
 });
 
+$('.tede span').click(function() {
+	var obj = $(this).parent().attr('class');
+	var value = $(this).html();
+	var cod = $(this).parent().attr('id');
+	
+	if (obj == 'tede obs') {
+		var classe = 'obs';
+	}else if (obj == 'tede agenda') {
+		var classe = 'agenda';
+	}else if (obj == 'tede responsavel') {
+		var classe = 'responsavel';
+	}
+
+	$(this).parent().html('<input type="text" class="'+ classe +' aj" id="'+cod+'"  value="'+value+'">');
+});
 
 $('.aj').pressEnter(function() {
 	var obj = $(this).attr('class');

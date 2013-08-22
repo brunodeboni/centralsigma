@@ -62,14 +62,17 @@ date_default_timezone_set('America/Sao_Paulo');
 			<option value="mr_gomes">Desenvolvimento MR. Gomes</option>
 			<option value="diretoria">Diretoria</option>
 			<option value="marketing">Marketing/Divulgação</option>
+			<option value="qualidade">Qualidade</option>
 		</select>
 		<br>
 		
 		<div id="st_adm" class="colabs">
 			<input type="checkbox" class="colaboradores" name="colaboradores[]" value="Cristina Ritter">Cristina Ritter
+			<input type="checkbox" class="colaboradores" name="colaboradores[]" value="Mariana Wendling">Mariana Wendling
 		</div>
 		<div id="st_analise" class="colabs">
 			<input type="checkbox" class="colaboradores" name="colaboradores[]" value="Davi Utzig">Davi Utzig
+			<input type="checkbox" class="colaboradores" name="colaboradores[]" value="Gabriel Nienow">Gabriel Nienow
 			<input type="checkbox" class="colaboradores" name="colaboradores[]" value="Josias Boone">Josias Boone
 		</div>
 		<div id="st_comercial" class="colabs">
@@ -98,6 +101,9 @@ date_default_timezone_set('America/Sao_Paulo');
 			<input type="checkbox" class="colaboradores" name="colaboradores[]" value="Danna Wendling">Danna Wendling
 			<input type="checkbox" class="colaboradores" name="colaboradores[]" value="Gabriela Lima">Gabriela Lima
 			<input type="checkbox" class="colaboradores" name="colaboradores[]" value="Moisés Lima">Moisés Lima
+		</div>
+		<div id="st_qualidade" class="colabs">
+			<input type="checkbox" class="colaboradores" name="colaboradores[]" value="Luana Ferreira">Luana Ferreira
 		</div>
 		
 		<span style="font-size: 12px;">Você pode selecionar colaboradores de vários setores ao mesmo tempo.</span>
@@ -292,8 +298,10 @@ if (isset ($_POST['dh_registro'])) {
 		switch($colaborador) {
 			case 'Abrahão Lima': $col_email[] = '<abrahaolslima@gmail.com>'; break;
 			case 'Cristina Ritter': $col_email[] = '<administrativo@redeindustrial.com.br>'; break;
+			case 'Mariana Wendling': $col_email[] = '<administrativo2@redeindustrial.com.br>'; break;
 			case 'Davi Utzig': $col_email[] = '<analise@redeindustrial.com.br>'; break;
 			case 'Josias Boone': $col_email[] = '<analise@redeindustrial.com.br>'; break;
+			case 'Gabriel Nienow': $col_email[] = '<analise@redeindustrial.com.br>'; break;
 			case 'Márcio Lamberty': $col_email[] = '<consultor@redeindustrial.com.br>'; break;
 			case 'Daniel Neves': $col_email[] = '<consultor@redeindustrial.com.br>'; break;
 			case 'Rodolfo Gomes': $col_email[] = '<ropgomes@gmail.com>'; break;
@@ -308,6 +316,7 @@ if (isset ($_POST['dh_registro'])) {
 			case 'Henrique Schimitt': $col_email[] = '<henriquesschmitt@gmail.com>'; break;
 			case 'Bruno De Boni': $col_email[] = '<brunodeboni@gmail.com>';
 			case 'Carolina Lima': $col_email[] = '<qualidade@redeindustrial.com.br>';
+			case 'Luana Ferreira': $col_email[] = '<controller@redeindustrial.com.br>';
 		}
 	}
 	
@@ -337,7 +346,7 @@ if (isset ($_POST['dh_registro'])) {
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 	$headers .= 'From: qualidade@redeindustrial.com.br '. "\r\n";
-	$headers .= 'CC: <abrahaolslima@gmail.com>, ';
+	$headers .= 'CC: <abrahaolslima@gmail.com>, <controller@redeindustrial.com.br>, ';
 	foreach ($col_email as $email) {
 		$headers .= $email.', ';
 	}
