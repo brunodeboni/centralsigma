@@ -50,8 +50,13 @@ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www')
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
 <!-- FIM DO GOOGLE ANALYTICS -->
 
-
-
+<!--
+<div id="propaganda-fixa">
+    <a href="http://www.sigmaandroid.com.br" target="_blank">
+        <img src="http://www.centralsigma.com.br/arquivos/imagens/propaganda-fixa.png" height="200">
+    </a>
+</div>
+-->
 <div id="art-page-background-simple-gradient">
     <div id="art-page-background-gradient"></div>
 </div>

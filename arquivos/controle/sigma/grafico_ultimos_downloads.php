@@ -150,8 +150,8 @@ if (isset($_POST['inicial_date']) && isset($_POST['final_date'])) {
 	}
         
         //Total de downloads por UF
-        $sql3 = "select count(cod) as quant, uf 
-      	from downloads_meta 
+        $sql3 = "select count(cod) as quant, uf, pais 
+                from downloads_meta 
 		where data between str_to_date(:inicial_date, '%d/%m/%Y') and str_to_date(:final_date, '%d/%m/%Y')
 		group by uf";
 	$query3 = $db_02->prepare($sql3);
@@ -162,7 +162,14 @@ if (isset($_POST['inicial_date']) && isset($_POST['final_date'])) {
 	
 	foreach($query3->fetchAll() as $fetch) {
 		
-		$rrow[$fetch['uf']] = $fetch['quant'];
+                $pais = $fetch['pais'];
+                $uf = $fetch['uf'];
+                
+                if ($pais == 'BR' || $pais == 'PT') {
+                    $uf = $pais."-".$uf;
+                }
+                
+		$rrow[$uf] = $fetch['quant'];
 	}
 ?>
 <script>
@@ -225,15 +232,17 @@ function drawChart3() {
     data3.addColumn('string', 'UF');
     data3.addColumn('number', 'Downloads');
     data3.addRows([
-<?php foreach ($rrow as $uf => $quantidade) { 
-      echo "['BR-".$uf."', ".$quantidade." ],";
- } ?>
+<?php foreach ($rrow as $uf => $quantidade) {
+        echo "['".$uf."', ".$quantidade." ],";
+ } ?>         
  	]);
     // Set chart options
     var options3 = {'title':'Total de downloads por região',
                    'width':900,
                    'height':600,
-                    'region': 'BR'
+                   'displayMode': 'markers',
+                   'region': 'BR',
+                   'colorAxis': {colors: ['green', 'blue']}
                    };
 		
     // Instantiate and draw our chart, passing in some options.

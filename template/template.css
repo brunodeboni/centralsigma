@@ -2169,3 +2169,16 @@ td.key
 {
   background-image: none;
 }
+
+/* Mini-banner lateral direito fixo */
+#propaganda-fixa {
+    position: fixed;
+    right: -2px;
+    top: 50%;
+    z-index: 999;
+    width: 27px;
+    overflow: hidden;
+}
+#propaganda-fixa:hover {
+    width: 200px;
+}
