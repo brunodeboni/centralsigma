@@ -76,17 +76,17 @@
                 <span>Celular:</span>
                 <input type="text" id="celular" name="celular" class="block" required><br>
 
-                <span>E-mail:</span>
+                <span>E-mail:</span> <span class="descricao">Será o usuário administrador da conta da empresa.</span>
                 <input type="text" id="email" name="email" class="block" required><br>
-
-                <span>Usuário:</span> <span class="descricao">Será o usuário administrador da conta da empresa. Não deve conter sinais, acentos, cedilha ou espaços.</span>
-                <input type="text" id="usuario" name="usuario" class="block"><br>
-
+                
+                <span>Nome:</span>
+                <input type="text" id="nome" name="nome" class="block" required><br>
+                
                 <span>Senha:</span>
-                <input type="password" id="senha" name="senha" class="block"><br>
+                <input type="password" id="senha" name="senha" class="block" required><br>
 
                 <span>Confirme a senha:</span>
-                <input type="password" id="confirma" name="confirma" class="block"><br>
+                <input type="password" id="confirma" name="confirma" class="block" required><br>
 
                 <input id="ja_usuario" type="checkbox" name="ja_usuario"> Já é usuário SIGMA?<br><br>
 
@@ -107,14 +107,7 @@ $(document).ready(function() {
     $('#telefone').mask('(99) 9999-9999?9');
     $('#celular').mask('(99) 9999-9999?9');
     $('#nro').mask('?99999999');
-    $('#usuario').keyup(function() {
-            var newval = valid($(this).val(), 'special');
-            $(this).val(newval);
-    });
-    $('#usuario').blur(function() {
-            var newval = valid($(this).val(), 'special');
-            $(this).val(newval);
-    });
+    
     $('#subdominio').keyup(function() {
             var newval = valid($(this).val(), 'special');
             var novoval = newval.toLowerCase();
@@ -154,10 +147,10 @@ $('#btn').click(function() {
     if ($('#uf').val() == "") {$('#div_erro').show(); $('#div_erro').html('Por favor, informe o estado da Empresa.'); return false;}
     if ($('#telefone').val() == "") {$('#div_erro').show(); $('#div_erro').html('Por favor, informe o telefone da Empresa.'); return false;}
     if ($('#celular').val() == "") {$('#div_erro').show(); $('#div_erro').html('Por favor, informe um número de celular.'); return false;}
-    if ($('#email').val() == "" || !checarEmail($('#email').val())) {$('#div_erro').show(); $('#div_erro').html('Por favor, informe um endereço de e-mail para contato.'); return false;}
     
-    if ($('#usuario').val() == "") {$('#div_erro').show(); $('#div_erro').html('Por favor, crie um usuário administrador.'); return false;}
-    if (! validarUsuario($('#usuario').val())) {$('#div_erro').show(); $('#div_erro').html('Este usuário já existe.'); return false;}
+    if ($('#email').val() == "" || !checarEmail($('#email').val())) {$('#div_erro').show(); $('#div_erro').html('Por favor, informe um endereço de e-mail para usuário master.'); return false;}
+    if (! validarUsuario($('#email').val())) {$('#div_erro').show(); $('#div_erro').html('Este e-mail já esta cadastrado.'); return false;}
+    if ($('#nome').val() == "" || !checarEmail($('#email').val())) {$('#div_erro').show(); $('#div_erro').html('Por favor, informe seu nome para o usuário master.'); return false;}
     if ($('#senha').val() == "") {$('#div_erro').show(); $('#div_erro').html('Por favor, crie uma senha.'); return false;}
     if ($('#confirma').val() == "") {$('#div_erro').show(); $('#div_erro').html('Por favor, repita a senha.'); return false;}
 
@@ -231,8 +224,8 @@ function validarCNPJ(cnpj) {
     
 }
 
-function validarUsuario(usuario) {
-    $.post('ajax_usuario.php', {usuario: usuario}, function(data) {
+function validarUsuario(email) {
+    $.post('ajax_usuario.php', {email: email}, function(data) {
         if (data == 'true') return true; 
         else return false;
     });
@@ -245,8 +238,6 @@ function validarUsuario(usuario) {
 if (isset ($_POST['empresa'])) {
 	
     $endereco = $_POST['logradouro'].", ".$_POST['nro'];
-
-    $usuario = preg_replace('/[^a-z0-9]/i', '', $_POST['usuario']);
 
     if ($_POST['senha'] == $_POST['confirma']) {
         $senha = md5($_POST['senha']);
@@ -266,8 +257,8 @@ if (isset ($_POST['empresa'])) {
     $db = Database::instance('mobile_provider');
 	
     $sql = "insert into clientes 
-    	(empresa, cnpj, endereco, complemento, cidade, uf, telefone, celular, email, usuario, senha, subdominio) 
-    	values (:empresa, :cnpj, :endereco, :complemento, :cidade, :uf, :telefone, :celular, :email, :usuario, :senha, null)";
+    	(empresa, cnpj, endereco, complemento, cidade, uf, telefone, celular, nome, email, senha, subdominio) 
+    	values (:empresa, :cnpj, :endereco, :complemento, :cidade, :uf, :telefone, :celular, :nome, :email, :senha, null)";
     $query = $db->prepare($sql);
     $success = $query->execute(array(
     	':empresa' => $_POST['empresa'],
@@ -278,8 +269,8 @@ if (isset ($_POST['empresa'])) {
     	':uf' => $_POST['uf'],
     	':telefone' => $_POST['telefone'],
     	':celular' => $_POST['celular'],
+        ':nome' => $_POST['nome'],
    	':email' => $_POST['email'],
-    	':usuario' => $usuario,
     	':senha' => $senha,
     ));
     
